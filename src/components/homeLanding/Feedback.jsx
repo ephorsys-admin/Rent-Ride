@@ -1,7 +1,7 @@
 import { useEffect, useState, memo } from "react";
 import TestimonialSlider from "../../shared/ui/Feedback/TestimonialSlider.jsx";
 import { motion } from "framer-motion";
-import TypingText from "../../shared/Helpers/TypingText.jsx";
+import TypingText from "../../shared/helpers/TypingText.jsx";
 
 const testimonialsData = [
   {

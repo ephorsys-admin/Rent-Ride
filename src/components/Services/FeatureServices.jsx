@@ -2,7 +2,7 @@ import two from "../../assets/Services/two.avif";
 import three from "../../assets/Services/three.avif";
 import Four from "../../assets/Services/Four.avif";
 import Five from "../../assets/Services/Five.avif";
-import TypingText from "../../shared/Helpers/TypingText";
+import TypingText from "../../shared/helpers/TypingText";
 import { memo, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
