@@ -12,7 +12,7 @@ import {
 } from "lucide-react";
 
 import about from "../assets/about.avif";
-import LocationMap from "../components/contact/LocationMap";
+import LocationMap from "../components/Contact/LocationMap";
 
 import { carModels } from "../components/contact/carData";
 import BgHero from "../helpers/BgHero";
