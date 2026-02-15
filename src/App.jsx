@@ -1,10 +1,10 @@
 import { RouterProvider } from 'react-router-dom';
 import Router from './routes/Router';
 import './App.css';
-import useScrollAnimation from './shared/helpers/useScrollAnimation';
+import UseScrollAnimation from './shared/helpers/UseScrollAnimation';
 
 function App() {
-   useScrollAnimation();
+   UseScrollAnimation();
   return <RouterProvider router={Router} />;
 }
 
