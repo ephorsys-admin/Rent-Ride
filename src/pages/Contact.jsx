@@ -14,7 +14,7 @@ import {
 import about from "../assets/about.avif";
 import LocationMap from "../components/Contact/LocationMap";
 
-import { carModels } from "../components/contact/carData";
+import { carModels } from "../components/Contact/carData";
 import BgHero from "../helpers/BgHero";
 
 const ContactPage = () => {
