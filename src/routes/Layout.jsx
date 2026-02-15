@@ -5,10 +5,10 @@ import { Outlet } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import 'react-toastify/dist/ReactToastify.css';
-import LenisProvider from '../Shared/providers/LenisProvider'
+import LenisProvider from '../shared/providers/LenisProvider'
 import ScrollToTop from '../shared/core/ScrollToTop';
 import WhatsAppFloating from '../helpers/WhatsAppFloating';
-import ScrollToTopButton from '../Shared/providers/ScrollToTopButton';
+import ScrollToTopButton from '../shared/providers/ScrollToTopButton';
 
 
 function Layout() {

@@ -1,5 +1,5 @@
 import { memo, useEffect, useState } from "react";
-import TypingText from "../../Shared/Helpers/TypingText";
+import TypingText from "../../shared/Helpers/TypingText";
 import { Car, Target, Compass, CheckCircle } from 'lucide-react';
 import { motion } from "framer-motion";
 

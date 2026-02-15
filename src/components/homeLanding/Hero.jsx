@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import carVideo from "../../assets/car1.mp4";
 import { motion } from "framer-motion";
-import TypingText from "../../Shared/Helpers/TypingText";
+import TypingText from "../../shared/Helpers/TypingText";
 import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
