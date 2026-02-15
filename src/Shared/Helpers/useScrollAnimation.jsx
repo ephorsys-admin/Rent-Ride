@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const useScrollAnimation = () => {
+const UseScrollAnimation = () => {
   useEffect(() => {
     // Save scroll position before reload
     const saveScrollPosition = () => {
@@ -59,4 +59,4 @@ const useScrollAnimation = () => {
   }, []);
 };
 
-export default useScrollAnimation;
+export default UseScrollAnimation;
