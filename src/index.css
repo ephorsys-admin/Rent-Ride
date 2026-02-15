@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  background-color: #000;
+  min-height: 100vh;
+  
+}
+
+
+
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Thin Modern Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #c70d0d, #ff0000);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #c70d0d, #ff0000);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #ff0000 transparent;
+}
+
+@keyframes navItemFade {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-navItem {
+  opacity: 0;
+  animation: navItemFade 0.5s ease-out forwards;
+}
+
+
+@keyframes textColorFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+
+p {
+  opacity: 0;                    
+  transform: translateY(20px);   
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out; /* faster animation */
+  
+}
+
+p.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+* {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+
+
+
+
