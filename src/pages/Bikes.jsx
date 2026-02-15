@@ -1,6 +1,6 @@
 import React from "react";
 import Upcoming from "../helpers/Upcoming";
-import BikeSevice from "../components/BIke/BikeSevice";
+import BikeSevice from "../components/BIke/BIkeSevice";
 import BgHero from "../helpers/BgHero";
 import about from "../assets/about.avif";
 import { Helmet } from "react-helmet-async";
