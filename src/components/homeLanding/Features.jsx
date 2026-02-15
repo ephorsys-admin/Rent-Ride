@@ -1,8 +1,8 @@
 import { Sparkles, Car, Briefcase, Plane, User } from "lucide-react";
 import React, {  memo, useEffect, useState } from "react";
-import ServiceCard from "../../Shared/ui/Home/ServiceCard";
+import ServiceCard from "../../shared/ui/Home/ServiceCard";
 import { motion } from "framer-motion";
-import TypingText from "../../Shared/Helpers/TypingText";
+import TypingText from "../../shared/Helpers/TypingText";
 // Data for the card mapping
 const servicesData = [
   {

@@ -1,5 +1,5 @@
 import React from "react";
-import TypingText from "../Shared/Helpers/TypingText";
+import TypingText from "../shared/Helpers/TypingText";
 
 function Bghero({
   imgSrc,
