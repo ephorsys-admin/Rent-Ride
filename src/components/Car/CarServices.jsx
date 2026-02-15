@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import SedanCars from "../../Shared/ui/Car/SedanCars";
-import SUVCars from "../../Shared/ui/Car/SUVCars";
+import SedanCars from "../../shared/ui/Car/SedanCars";
+import SUVCars from "../../shared/ui/Car/SUVCars";
 import { Car, Truck } from "lucide-react";
 import { useLocation } from "react-router-dom";
 

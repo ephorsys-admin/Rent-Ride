@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import CarCard from "../../Shared/ui/Services/CardCard";
+import CarCard from "../../shared/ui/Services/CardCard";
 import one from "../../assets/cars/one.avif";
 import two from "../../assets/cars/two.avif";
 import three from "../../assets/cars/three.avif";

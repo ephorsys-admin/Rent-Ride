@@ -1,7 +1,7 @@
 import React, { useEffect, useState , memo } from "react";
-import IncreasingPoints from "../../Shared/ui/Home/IncreasingPoints";
-import ImageAndLogo from "../../Shared/ui/Home/ImageAndLogo";
-import TypingText from "../../Shared/Helpers/TypingText";
+import IncreasingPoints from "../../shared/ui/Home/IncreasingPoints";
+import ImageAndLogo from "../../shared/ui/Home/ImageAndLogo";
+import TypingText from "../../shared/helpers/TypingText";
 import { motion } from "framer-motion";
 const MemoTypingText = memo(TypingText);
 const TrustedBrands = () => {

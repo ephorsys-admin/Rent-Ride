@@ -1,7 +1,7 @@
 import React, { useEffect, useState , memo } from "react";
-import TimelineComponent from "../../Shared/ui/Home/HowItWorkContains";
+import TimelineComponent from "../../shared/ui/Home/HowItWorkContains";
 import { motion } from "framer-motion";
-import TypingText from "../../Shared/Helpers/TypingText";
+import TypingText from "../../shared/helpers/TypingText";
 const MemoTypingText = memo(TypingText);
 const HowItWorks = () => {
     const [isVisible, setIsVisible] = useState(false);

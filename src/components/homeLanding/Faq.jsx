@@ -2,7 +2,7 @@ import React, { useEffect, useState, memo } from "react";
 import { ChevronDown } from "lucide-react";
 import carVideo from "../../assets/car3.mp4";
 import { motion } from "framer-motion";
-import TypingText from "../../Shared/Helpers/TypingText";
+import TypingText from "../../shared/helpers/TypingText";
 
 const MemoTypingText = memo(TypingText);
 

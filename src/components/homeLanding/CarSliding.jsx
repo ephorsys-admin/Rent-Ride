@@ -1,5 +1,5 @@
 
-import CarFleetSlider from '../../Shared/ui/Services/CarFleetSlider'
+import CarFleetSlider from '../../shared/ui/Services/CarFleetSlider'
 export default function CarSliding() {
 
   return (
