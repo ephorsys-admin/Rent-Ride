@@ -1,7 +1,7 @@
 import React, { useState, useEffect, memo } from 'react';
 import { Car, MapPin, Users, Shield } from 'lucide-react';
 import { motion } from "framer-motion";
-import TypingText from "../../shared/Helpers/TypingText";
+import TypingText from "../../shared/helpers/TypingText";
 
 const MemoTypingText = memo(TypingText);
 export default function AboutChooseus() {

@@ -2,7 +2,7 @@ import { Car, Briefcase, Plane, User, MapPin, Clock, Shield, Headphones } from "
 import ServiceCard from "../../shared/ui/Home/ServiceCard";
 import { motion } from "framer-motion";
 import { memo, useEffect, useState } from "react";
-import TypingText from "../../shared/Helpers/TypingText";
+import TypingText from "../../shared/helpers/TypingText";
 
 // Data for the card mapping
 const servicesData = [

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, memo } from "react";
 import aboutushero from "../../assets/aboutushero.png";
 import { motion } from "framer-motion";
-import TypingText from "../../shared/Helpers/TypingText";
+import TypingText from "../../shared/helpers/TypingText";
 import { useNavigate } from "react-router-dom";
 
 const MemoTypingText = memo(TypingText);

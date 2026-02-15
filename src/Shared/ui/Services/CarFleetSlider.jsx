@@ -10,7 +10,7 @@ import baleno from "../../../assets/Sedan Cars/baleno.avif"
 import brezza from "../../../assets/SUVCars/brezza.avif"
 import fronx from "../../../assets/Sedan Cars/fronx.avif"
 
-import TypingText from "../../Helpers/TypingText";
+import TypingText from "../../helpers/TypingText";
 import { motion } from "framer-motion";
 const cars = [
   {
