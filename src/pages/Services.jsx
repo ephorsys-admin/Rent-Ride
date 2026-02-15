@@ -5,7 +5,7 @@ import one from "../assets/Services/one.avif";
 import FeaturesSection from "../components/Services/FeatureServices";
 import OurService from "../components/Services/Ourservice";
 import BgHero from "../helpers/BgHero";
-import TypingText from "../Shared/Helpers/TypingText";
+import TypingText from "../shared/helpers/TypingText";
 import { Helmet } from "react-helmet-async";
 
 const MemoTypingText = memo(TypingText);
