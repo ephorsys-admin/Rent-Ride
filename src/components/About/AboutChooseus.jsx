@@ -124,7 +124,7 @@ const features = [
             <div className="relative w-full max-w-[280px] sm:max-w-sm">
               <div className="relative aspect-square rounded-full overflow-hidden shadow-2xl shadow-blue-500/20 group hover:shadow-blue-500/40 transition-shadow duration-300 cursor-pointer">
                 <img
-                  src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?w=800&q=80"
+                  src="/Aboutpage/whychooseus.webp"
                   alt="Red Luxury Car"
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"

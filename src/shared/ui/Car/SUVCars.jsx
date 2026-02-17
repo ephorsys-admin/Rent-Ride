@@ -3,21 +3,14 @@ import { ArrowRight, ArrowUpRight, Filter, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-import brezza from "../../../assets/SUVCars/brezza.avif";
-import venue from "../../../assets/SUVCars/venue.avif";
-import carens from "../../../assets/SUVCars/carens.avif";
-import clavis from "../../../assets/SUVCars/clavis.avif";
-import XUV from "../../../assets/SUVCars/XUV.avif";
-import thar from "../../../assets/SUVCars/thar.avif";
-import N from "../../../assets/SUVCars/N.avif";
-import exter from "../../../assets/SUVCars/exter.avif";
-import Nexon from "../../../assets/SUVCars/Nexon.avif";
+
 
 
 const SUVCars = () => {
   const [filterType, setFilterType] = useState("all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceMode, setPriceMode] = useState({});
+    const [loadedImages, setLoadedImages] = useState(false);
   const navigate = useNavigate();
 
   // car data
@@ -25,7 +18,7 @@ const cars = [
   {
     id: 11,
     name: "Maruti Suzuki Brezza",
-    image: brezza,
+    image: "/SUVCars/brezza.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
     fuel: "Petrol",
@@ -36,7 +29,7 @@ const cars = [
   {
     id: 12,
     name: "Hyundai Venue",
-    image: venue,
+    image: "/SUVCars/venue.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
     fuel: "Petrol",
@@ -47,7 +40,7 @@ const cars = [
   {
     id: 13,
     name: "Kia Carens Clavis",
-    image: carens,
+    image: "/SUVCars/carens.webp",
     seater: "7 Seater Car",
     transmission: "Manual",
     fuel: "Petrol",
@@ -58,7 +51,7 @@ const cars = [
   {
     id: 14,
     name: "Kia Carens Clavis",
-    image: clavis,
+    image: "/SUVCars/clavis.webp",
     seater: "7 Seater Car",
     transmission: "Automatic",
     fuel: "Diesel",
@@ -69,7 +62,7 @@ const cars = [
   {
     id: 15,
     name: "Mahindra XUV 500",
-    image: XUV,
+    image: "/SUVCars/XUV.webp",
     seater: "7 Seater Car",
     transmission: "Manual",
     fuel: "Diesel",
@@ -80,7 +73,7 @@ const cars = [
   {
     id: 16,
     name: "Mahindra Thar",
-    image: thar,
+    image: "/SUVCars/thar.webp",
     seater: "4 Seater Car",
     transmission: "Manual (RWD)",
     fuel: "Petrol",
@@ -91,7 +84,7 @@ const cars = [
   {
     id: 17,
     name: "Mahindra Scorpio N",
-    image: N,
+    image: "/SUVCars/N.webp",
     seater: "7 Seater Car",
     transmission: "Manual",
     fuel: "Diesel",
@@ -102,7 +95,7 @@ const cars = [
   {
     id: 18,
     name: "Hyundai Exter",
-    image: exter,
+    image: "/SUVCars/exter.webp",
     seater: "5 Seater Car",
     transmission: "Automatic",
     fuel: "Petrol",
@@ -113,7 +106,7 @@ const cars = [
   {
     id: 19,
     name: "Tata Nexon",
-    image: Nexon,
+    image: "/SUVCars/Nexon.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
     fuel: "Petrol",
@@ -274,23 +267,42 @@ const cars = [
                     className="group bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/10 hover:-translate-y-1 w-full max-w-[360px]"
                   >
                     {/* Seater Badge */}
-                    <div className="relative">
-                      {/* Car Image */}
-                      <div className="relative h-48 bg-gradient-to-br from-zinc-100 to-zinc-50 overflow-hidden">
-                        <img
-                          loading={index < 2 ? "eager" : "lazy"}
-                          fetchPriority={index < 2 ? "high" : "auto"}
-                          src={car.image}
-                          alt={car.name}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                      </div>
-                      <div className="absolute top-40 left-4 z-10">
-                        <span className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-xs font-medium text-black">
-                          {car.seater}
-                        </span>
-                      </div>
-                    </div>
+               <div className="relative">
+  {/* Car Image */}
+  <div className="relative h-48 bg-gradient-to-br from-zinc-100 to-zinc-50 overflow-hidden">
+
+    {/* Skeleton */}
+    {!loadedImages[car.id] && (
+      <div className="absolute inset-0 bg-zinc-200 animate-pulse z-10" />
+    )}
+
+    <img
+      loading={index < 2 ? "eager" : "lazy"}
+      fetchpriority={index < 2 ? "high" : "auto"}
+      src={car.image}
+      alt={car.name}
+      onLoad={() =>
+        setLoadedImages((prev) => ({
+          ...prev,
+          [car.id]: true,
+        }))
+      }
+      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+      style={{
+        opacity: loadedImages[car.id] ? 1 : 0,
+        filter: loadedImages[car.id] ? "blur(0px)" : "blur(12px)",
+        transition: "opacity 0.4s ease, filter 0.4s ease",
+      }}
+    />
+  </div>
+
+  <div className="absolute top-40 left-4 z-10">
+    <span className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-xs font-medium text-black">
+      {car.seater}
+    </span>
+  </div>
+</div>
+
 
                     {/* Card Content */}
                     <div className="p-6">

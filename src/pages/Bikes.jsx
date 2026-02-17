@@ -18,7 +18,7 @@ const Bikes = () => {
         <link rel="canonical" href="https://rentride.com/about" />
       </Helmet>
       <BgHero
-        imgSrc={about}
+        imgSrc="/Bikes/bike-1.webp"
         imgAlt={""}
         heading={"Explore Our Services"}
         Home={"Home"}

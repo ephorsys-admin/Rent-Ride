@@ -24,7 +24,7 @@ function ImageAndLogo({ imgAlt, heading, Home, service }) {
 <div className="relative h-[42vh] sm:h-[45vh] md:h-[52vh] lg:h-[58vh] overflow-hidden rounded-3xl bg-black">
 <div
   className="relative h-[42vh] sm:h-[45vh] md:h-[52vh] lg:h-[58vh] rounded-3xl bg-black bg-cover bg-[center_65%]"
-  style={{ backgroundImage: `url(${brand})` }}
+  style={{ backgroundImage: `url(/brand.webp)` }}
 />
 
 
@@ -46,12 +46,7 @@ z
         {/* LOGO SLIDER */}
         <div className="relative bg-black/95 py-8 sm:py-10 md:py-14 px-3 sm:px-6 border-t border-gray-800/60">
 
-          <div className="text-center mb-6 sm:mb-8">
-            <p className="text-white text-[10px] sm:text-xs md:text-sm uppercase tracking-widest">
-              Trusted Car Brands
-            </p>
-            <div className="w-14 h-[2px] bg-[#ff0000] mx-auto mt-2" />
-          </div>
+       
 
           <div className="relative overflow-hidden max-w-7xl mx-auto">
 
@@ -83,7 +78,7 @@ z
                   <img
                     src={brand.logo}
                     alt={brand.name}
-                    className="w-full h-full max-w-full max-h-full"
+                    className="w-[50px] h-[50px] max-w-full max-h-full"
                     style={{ objectFit: "contain" }}
                     loading="lazy"
                   />
@@ -97,7 +92,7 @@ z
       </div>
 
       {/* ANIMATIONS */}
-      <style jsx>{`
+      <style >{`
         @keyframes scroll {
           from { transform: translateX(0); }
           to { transform: translateX(-50%); }

@@ -9,8 +9,11 @@ import {
   Phone,
   Mail,
 } from "lucide-react";
+import { useState } from "react";
 
 const CarDetails = () => {
+  const [heroLoaded, setHeroLoaded] = useState(false);
+
   const { state } = useLocation();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -33,7 +36,7 @@ const CarDetails = () => {
 - Rental Price: ₹${priceToShow} / ${mode}
 
 *Features:*
-${state.features?.map(feature => `- ${feature}`).join('\n')}
+${state.features?.map((feature) => `- ${feature}`).join("\n")}
 
 Please confirm availability and booking details.`;
 
@@ -44,7 +47,7 @@ Please confirm availability and booking details.`;
     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
     // Open WhatsApp in new tab
-    window.open(whatsappURL, '_blank');
+    window.open(whatsappURL, "_blank");
   };
 
   if (!state) {
@@ -95,15 +98,26 @@ Please confirm availability and booking details.`;
             <div className="space-y-6">
               {/* IMAGE */}
               <div className="relative w-full rounded-3xl overflow-hidden bg-zinc-900 aspect-[16/9]">
+                {/* Skeleton */}
+                {!heroLoaded && (
+                  <div className="absolute inset-0 bg-zinc-800 animate-pulse z-10" />
+                )}
+
                 <img
                   loading="eager"
-                  fetchPriority="high"
+                  fetchpriority="high"
                   src={state.image}
                   alt={state.name}
+                  onLoad={() => setHeroLoaded(true)}
                   className="w-full h-full object-cover"
+                  style={{
+                    opacity: heroLoaded ? 1 : 0,
+                    filter: heroLoaded ? "blur(0px)" : "blur(14px)",
+                    transition: "opacity 0.4s ease, filter 0.4s ease",
+                  }}
                 />
 
-                <div className="absolute top-3 left-3">
+                <div className="absolute top-3 left-3 z-20">
                   <span className="px-3 py-1 bg-white text-black text-xs font-semibold rounded-full">
                     {state.seater}
                   </span>

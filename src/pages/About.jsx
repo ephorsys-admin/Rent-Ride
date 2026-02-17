@@ -3,7 +3,7 @@ import CarRentalVision from "../components/About/CarRentalVision";
 import Feedback from "../components/homeLanding/Feedback";
 import CarRentalAbout from "../components/homeLanding/homeAbout";
 import Bghero from "../helpers/BgHero";
-import about from "../assets/about.avif";
+
 import { Helmet } from "react-helmet-async";
 
 export default function About() {
@@ -19,7 +19,7 @@ export default function About() {
       </Helmet>
       <div className="scroll-smooth">
         <Bghero
-          imgSrc={about}
+          imgSrc="/Aboutpage/aboutmain.webp"
           imgAlt={""}
           heading={"About Us"}
           Home={"Home"}

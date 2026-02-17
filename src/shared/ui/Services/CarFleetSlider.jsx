@@ -1,123 +1,125 @@
 import { useEffect, useRef, useState, memo } from "react";
-import i20 from "../../../assets/Sedan Cars/i20.avif"
-import thar from "../../../assets/SUVCars/thar.avif"
-import swift1 from "../../../assets/Sedan Cars/swift1.avif"
-import clavis from "../../../assets/SUVCars/clavis.avif"
-import tiago from "../../../assets/Sedan Cars/tiago.avif"
-import venue from "../../../assets/SUVCars/venue.avif"
-import XUV from "../../../assets/SUVCars/XUV.avif"
-import baleno from "../../../assets/Sedan Cars/baleno.avif"
-import brezza from "../../../assets/SUVCars/brezza.avif"
-import fronx from "../../../assets/Sedan Cars/fronx.avif"
 
 import TypingText from "../../helpers/TypingText";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+
 const cars = [
   {
     id: 1,
     name: "Hyundai i20 Asta",
-    fuel: "Petrol",
+    type: "Petrol",
     seater: 5,
     price12h: 1499,
     price24h: 1899,
-    image: i20,
+    image: "/SedanCars/i20.webp",
+    category: "car"
   },
   {
     id: 2,
     name: "Mahindra Thar",
-    fuel: "Petrol",
+    type: "Petrol",
     seater: 4,
     price12h: 3199,
     price24h: 3599,
-    image: thar,
+    image: "/SUVCars/thar.webp",
+    category: "car"
   },
   {
     id: 3,
-    name: "Maruti Suzuki Swift",
-    fuel: "Petrol",
-    seater: 5,
-    price12h: 1499,
-    price24h: 1899,
-    image: swift1,
+    name: "Meteor 350",
+    type: "Petrol",
+    seater: 2,
+    price12h: 999,
+    price24h: 1199,
+    image: "/Bikes/Meteor.webp",
+    category: "bike"
   },
   {
     id: 4,
     name: "Kia Carens Clavis",
-    fuel: "Diesel",
+    type: "Diesel",
     seater: 7,
     price12h: 2699,
     price24h: 3299,
-    image: clavis,
+    image: "/SUVCars/clavis.webp",
+    category: "car"
   },
   {
     id: 5,
-    name: "TATA Tiago",
-    fuel: "Petrol",
-    seater: 5,
-    price12h: 1399,
-    price24h: 1799,
-    image: tiago,
+    name: "Classic 350",
+    type: "Petrol",
+    seater: 2,
+    price12h: 999,
+    price24h: 1199,
+    image: "/Bikes/classic.webp",
+    category: "bike"
   },
   {
     id: 6,
     name: "Hyundai Venue",
-    fuel: "Petrol",
+    type: "Petrol",
     seater: 5,
     price12h: 1899,
     price24h: 2399,
-    image: venue,
+    image: "/SUVCars/venue.webp",
+    category: "car"
   },
   {
     id: 7,
     name: "Mahindra XUV 500",
-    fuel: "Diesel",
+    type: "Diesel",
     seater: 7,
     price12h: 2999,
     price24h: 3599,
-    image: XUV,
+    image: "/SUVCars/XUV.webp",
+    category: "car"
   },
   {
     id: 8,
-    name: "Maruti Suzuki Baleno",
-    fuel: "Petrol",
-    seater: 5,
-    price12h: 1499,
-    price24h: 1899,
-    image: baleno,
+    name: "Jupiter 125",
+    type: "Petrol",
+    seater: 2,
+    price12h: 699,
+    price24h: 999,
+    image: "/Bikes/jupiter.webp",
+    category: "bike"
   },
   {
     id: 9,
-    name: "Maruti Suzuki Brezza",
-    fuel: "Petrol",
+    name: "Maruti Suzuki Baleno",
+    type: "Petrol",
     seater: 5,
-    price12h: 1899,
-    price24h: 2399,
-    image: brezza,
+    price12h: 1499,
+    price24h: 1899,
+    image: "/SedanCars/baleno.webp",
+    category: "car"
   },
   {
     id: 10,
     name: "Maruti Suzuki Fronx",
-    fuel: "Petrol",
+    type: "Petrol",
     seater: 5,
     price12h: 1799,
     price24h: 2399,
-    image: fronx,
+    image: "/SedanCars/fronx.webp",
+    category: "car"
   },
 ];
 
-
 const MemoTypingText = memo(TypingText);
+
 export default function CarFleetSlider() {
   const sliderRef = useRef(null);
   const [isAutoScroll, setIsAutoScroll] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
-    const [isVisible, setIsVisible] = useState(false);
-    
-  
-    useEffect(() => {
-      const timer = setTimeout(() => setIsVisible(true), 150);
-      return () => clearTimeout(timer);
-    }, []);
+  const [isVisible, setIsVisible] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsVisible(true), 150);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     if (!isAutoScroll) return;
@@ -146,50 +148,44 @@ export default function CarFleetSlider() {
 
   return (
     <section className="relative w-full overflow-hidden bg-black py-20">
-  
-
       <div className="relative z-10 mx-auto max-w-7xl px-4">
         <div className="mb-16 text-center">
-           <motion.div
-                      initial={{ opacity: 0, y: 24 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true, amount: 0.3 }}
-                      transition={{ duration: 0.7, ease: "easeOut" }}
-                      className="inline-flex items-center gap-2"
-                    >
-          <div className="inline-flex items-center gap-3 ">
-            {/* Premium Animated Icon */}
-            <div className="relative">
-              <svg className="w-8 h-8" viewBox="0 0 100 100">
-                <defs>x`x`x
-                  <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" style={{ stopColor: '#ff0000', stopOpacity: 1 }} />
-                    <stop offset="100%" style={{ stopColor: '#ff0000', stopOpacity: 1 }} />
-                  </linearGradient>
-                </defs>
-                <path
-                  d="M50,15 L55,45 L85,50 L55,55 L50,85 L45,55 L15,50 L45,45 Z"
-                  fill="url(#redGradient)"
-                  
-                />
-              </svg>
-              
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="inline-flex items-center gap-2"
+          >
+            <div className="inline-flex items-center gap-3 ">
+              {/* Premium Animated Icon */}
+              <div className="relative">
+                <svg className="w-8 h-8" viewBox="0 0 100 100">
+                  <defs>
+                    <linearGradient id="redGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                      <stop offset="0%" style={{ stopColor: '#ff0000', stopOpacity: 1 }} />
+                      <stop offset="100%" style={{ stopColor: '#ff0000', stopOpacity: 1 }} />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M50,15 L55,45 L85,50 L55,55 L50,85 L45,55 L15,50 L45,45 Z"
+                    fill="url(#redGradient)"
+                  />
+                </svg>
+              </div>
+              <span className="text-[#ff0000] text-sm font-bold tracking-[0.3em] uppercase animate-fade-in">
+                Premium Fleet
+              </span>
             </div>
-            <span className="text-[#ff0000] text-sm font-bold tracking-[0.3em] uppercase animate-fade-in">
-              Premium Fleet
-            </span>
-          </div>
           </motion.div>
-            <h2 className="text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">
-              <MemoTypingText
-                text="Explore Our Perfect Fleet"
-                show={isVisible}
-                speed={30}
-                color="#ffffff"
-              />
-            </h2>
-     
-          
+          <h2 className="text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">
+            <MemoTypingText
+              text="Explore Our Perfect Fleet"
+              show={isVisible}
+              speed={30}
+              color="#ffffff"
+            />
+          </h2>
         </div>
 
         <div
@@ -203,10 +199,10 @@ export default function CarFleetSlider() {
 
           <div
             ref={sliderRef}
-            className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide"
+            className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory px-[7.5%] sm:px-0"
           >
             {cars.map((car, index) => (
-              <CarCard key={car.id} car={car} index={index} />
+              <CarCard key={car.id} car={car} index={index} navigate={navigate} />
             ))}
           </div>
         </div>
@@ -226,22 +222,30 @@ export default function CarFleetSlider() {
         </div>
       </div>
 
-      <style jsx>{`
+<style>{`
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+`}</style>
 
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-        .scrollbar-hide {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-      `}</style>
     </section>
   );
 }
 
+const CarCard = memo(function CarCard({ car, navigate }) {
+  const handleBookNow = () => {
+    // Navigate to /bike for bikes, /cars for cars
+    if (car.category === "bike") {
+      navigate("/bike");
+    } else {
+      navigate("/cars");
+    }
+  };
 
-const CarCard = memo(function CarCard({ car }) {
   return (
     <div
       className="
@@ -252,7 +256,6 @@ const CarCard = memo(function CarCard({ car }) {
       "
     >
       <div className="relative rounded-2xl overflow-hidden backdrop-blur-xl border bg-black/60 shadow-lg border-gray-800/50">
-
         {/* Image */}
         <div className="relative h-52 sm:h-60 md:h-64 overflow-hidden bg-gradient-to-br from-gray-900 to-black">
           <img
@@ -264,7 +267,7 @@ const CarCard = memo(function CarCard({ car }) {
 
           {/* Price Badge */}
           <div className="absolute top-3 right-3 sm:top-4 sm:right-4 px-3 sm:px-4 py-2 sm:py-3 rounded-xl text-xs font-bold 
-                          bg-black/80 text-white shadow-[0_0_20px_rgba(255,0,0,0.25)]">
+                          bg-black/80 text-white ">
             <div className="flex justify-between gap-3">
               <span className="text-gray-400">12h</span>
               <span>₹{car.price12h}</span>
@@ -286,7 +289,7 @@ const CarCard = memo(function CarCard({ car }) {
           </div>
 
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold 
-                           bg-gray-900 text-gray-400 border border-gray-800">
+                           bg-black-900 text-gray-400 border border-gray-800">
             {car.type}
           </span>
 
@@ -297,18 +300,19 @@ const CarCard = memo(function CarCard({ car }) {
               bg-white text-black hover:bg-gray-200 transition
               active:scale-[0.98]
             "
+            onClick={handleBookNow}
           >
             Book Now
           </button>
 
           {/* Info */}
           <div className="flex gap-2 pt-2">
-            <div className="flex-1 text-center py-2.5 px-2 rounded-lg bg-gray-900/50 border border-gray-800/50">
+            <div className="flex-1 text-center py-2.5 px-2 rounded-lg bg-black-900/50 border border-gray-800/50">
               <p className="text-xs text-gray-500 mb-1">Seater</p>
               <p className="text-sm font-bold text-white">{car.seater}</p>
             </div>
 
-            <div className="flex-1 text-center py-2.5 px-2 rounded-lg bg-gray-900/50 border border-gray-800/50">
+            <div className="flex-1 text-center py-2.5 px-2 rounded-lg bg-black-900/50 border border-gray-800/50">
               <p className="text-xs text-gray-500 mb-1">Service</p>
               <p className="text-sm font-bold text-white">24/7</p>
             </div>
@@ -318,7 +322,3 @@ const CarCard = memo(function CarCard({ car }) {
     </div>
   );
 });
-
-
-
-

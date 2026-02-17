@@ -20,7 +20,7 @@ export default function CarRentalVision() {
     vision: {
       title: 'Pioneering excellence in car rental services',
       description: 'We aim to continually innovate and integrate the latest technology into our services. From easy online bookings to advanced vehicle tracking systems, our goal is to make the car rental process seamless and efficient for our customers. Quality is at the heart of everything we do. We maintain a diverse fleet of well-maintained vehicles that meet the highest standards of safety and comfort.',
-      image: 'https://images.unsplash.com/photo-1606664515524-ed2f786a0bd6?w=800&q=80',
+      image: "/Aboutpage/vision.webp",
       points: [
         'Our customers are our top priority',
         'Quality is at the heart of everything we do',
@@ -30,7 +30,7 @@ export default function CarRentalVision() {
     mission: {
       title: 'Delivering exceptional service every time',
       description: 'Our mission is to provide reliable, affordable, and convenient car rental solutions that exceed customer expectations. We are committed to building lasting relationships through transparency, integrity, and outstanding customer service. Every interaction matters to us.',
-      image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80',
+      image: "/Aboutpage/mission.webp",
       points: [
         'Building trust through transparency',
         'Affordable solutions without compromise',
@@ -40,7 +40,7 @@ export default function CarRentalVision() {
     approach: {
       title: 'Innovation meets customer satisfaction',
       description: 'We combine cutting-edge technology with personalized service to create the ultimate car rental experience. Our approach focuses on simplicity, efficiency, and putting you in control. From booking to return, we make every step effortless.',
-      image: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80',
+      image: "/Aboutpage/approach.webp",
       points: [
         'Smart technology for seamless booking',
         'Flexible rental options tailored to you',

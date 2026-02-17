@@ -129,6 +129,7 @@ const Features = () => {
           Icon={Icon}
           title={service.title}
           desc={service.desc}
+          
         />
       </motion.div>
     );

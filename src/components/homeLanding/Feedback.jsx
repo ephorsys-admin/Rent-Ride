@@ -1,7 +1,7 @@
 import { useEffect, useState, memo } from "react";
 import TestimonialSlider from "../../shared/ui/Feedback/TestimonialSlider.jsx";
 import { motion } from "framer-motion";
-import TypingText from "../../shared/helpers/TypingText";
+import TypingText from "../../shared/helpers/TypingText.jsx";
 
 const testimonialsData = [
   {
@@ -29,7 +29,7 @@ const testimonialsData = [
     image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
     quote: "Cars were well-maintained and delivered on time.",
     name: "Sophia Rodriguez",
-    role: "UX Designer",
+    role: "Traveller",
     rating: 5,
   },
   {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TypingText from "../shared/helpers/TypingText";
 
 function Bghero({
@@ -9,7 +9,9 @@ function Bghero({
   service,
   typingSpeed = 50,
   headingColor = "#ffffff",
-}) {
+}) 
+{
+  const [imgLoaded, setImgLoaded] = useState(false);
   return (
 <section
   className="relative w-full bg-black overflow-hidden
@@ -26,17 +28,37 @@ function Bghero({
                    overflow-hidden bg-black  "
       >
         {/* Background Image */}
-        <img
-          loading="eager"
-          fetchPriority="high"
-          src={imgSrc}
-          alt={imgAlt}
-          className="absolute inset-0 w-full h-full object-cover object-center"
-          sizes="(max-width: 640px) 100vw,
-                 (max-width: 1024px) 100vw,
-                 (max-width: 1536px) 1200px,
-                 1600px"
-        />
+    {/* Skeleton */}
+{/* Skeleton (always visible first) */}
+{!imgLoaded && (
+  <div className="absolute inset-0 bg-zinc-800 animate-pulse z-10" />
+)}
+
+<img
+  loading="eager"
+ fetchpriority="high"
+
+  src={imgSrc}
+  alt={imgAlt}
+  onLoad={(e) => {
+    if (e.target.complete) {
+      setImgLoaded(true);
+    }
+  }}
+  onError={() => setImgLoaded(true)} // prevents infinite skeleton
+  className="absolute inset-0 w-full h-full object-cover object-center"
+  sizes="(max-width: 640px) 100vw,
+         (max-width: 1024px) 100vw,
+         (max-width: 1536px) 1200px,
+         1600px"
+  style={{
+    opacity: imgLoaded ? 1 : 0,
+    filter: imgLoaded ? "blur(0px)" : "blur(16px)",
+    transition: "opacity 0.6s ease, filter 0.6s ease",
+  }}
+/>
+
+
 
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/50 to-black/70" />
@@ -65,12 +87,12 @@ function Bghero({
           >
             <a
               href="/"
-              className="text-white hover:text-red-500 transition-colors duration-300"
+              className="text-white hover:text-[#ff0000] transition-colors duration-300"
             >
               {Home}
             </a>
             <span className="text-white">/</span>
-            <span className="text-red-500 font-medium">{service}</span>
+            <span className="text-[#ff0000] font-medium">{service}</span>
           </div>
         </div>
       </div>

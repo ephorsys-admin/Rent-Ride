@@ -15,7 +15,7 @@ function Cars() {
         <link rel="canonical" href="https://rentride.com/cars" />
       </Helmet>
       <Bghero
-        imgSrc={about}
+        imgSrc="/SedanCars/car.webp"
         imgAlt={""}
         heading={"Explore Our Services"}
         Home={"Home"}

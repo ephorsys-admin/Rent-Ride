@@ -81,7 +81,7 @@ const CarRentalAbout = () => {
   }`}
 >
   <img
-    src={aboutushero}
+    src="/Aboutpage/aboutushero.webp"
     loading="lazy"
     decoding="async"
     alt="About us"
@@ -195,7 +195,7 @@ const CarRentalAbout = () => {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.97 }}
                 onClick={() => navigate("/contact")}
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full border border-gray-900/80 bg-black/50 backdrop-blur text-white text-sm sm:text-base font-medium overflow-hidden group relative"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-3.5 rounded-full border border-gray-600/90 bg-black/50 backdrop-blur text-white text-sm sm:text-base font-medium overflow-hidden group relative"
               >
                 <span className="relative z-10">Contact Us</span>
                 <span className="absolute inset-0 bg-gradient-to-r from-red-500/0 via-red-500/40 to-red-500/0 -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out"></span>
@@ -212,7 +212,7 @@ const CarRentalAbout = () => {
                 }`}
             >
               <img
-                src={aboutushero}
+                src="/Aboutpage/aboutushero.webp"
                 loading="lazy"
                 decoding="async"
                 alt="About us"

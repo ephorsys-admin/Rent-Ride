@@ -56,7 +56,7 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="flex items-start gap-3 group">
+              {/* <div className="flex items-start gap-3 group">
                 <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-[#FF0000] flex-shrink-0 group-hover:bg-[#FF0000]/10 group-hover:border-red-500/30 transition-all duration-300">
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -68,7 +68,7 @@ const Footer = () => {
                     info@rentride.com
                   </a>
                 </div>
-              </div>
+              </div> */}
 
               <div className="flex items-start gap-3 group">
                 <div className="w-8 h-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-[#FF0000] flex-shrink-0 group-hover:bg-[#FF0000]/10 group-hover:border-red-500/30 transition-all duration-300">
@@ -93,25 +93,16 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4 sm:mb-5 text-sm sm:text-base">Legal Policy</h3>
             <ul className="space-y-2 sm:space-y-3 text-sm text-white/70">
               <li>
-                <a href="#" className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
+                 <Link to=""  className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
                   Terms & Conditions
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
+                 <Link to=""  className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
                   Privacy Policy
-                </a>
+                </Link>
               </li>
-              <li>
-                <a href="#" className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
-                  Legal Notice
-                </a>
-              </li>
-              <li>
-                <a href="#" className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
-                  Accessibility
-                </a>
-              </li>
+         
             </ul>
           </div>
 
@@ -132,6 +123,11 @@ const Footer = () => {
               <li>
                 <Link to="/cars" className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
                   Cars
+                </Link>
+              </li>
+              <li>
+                <Link to="/bike" className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
+                  Bikes
                 </Link>
               </li>
               <li>

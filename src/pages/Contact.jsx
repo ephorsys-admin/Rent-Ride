@@ -11,11 +11,11 @@ import {
   ChevronDown,
 } from "lucide-react";
 
-import about from "../assets/about.avif";
 import LocationMap from "../components/Contact/LocationMap";
 
 import { carModels } from "../components/Contact/carData";
-import BgHero from "../helpers/BgHero";
+import Bghero from "../helpers/BgHero";
+
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -119,8 +119,8 @@ Please confirm availability
         <link rel="canonical" href="https://rentride.com/contact" />
       </Helmet>
 
-      <BgHero
-        imgSrc={about}
+      <Bghero
+         imgSrc="/SedanCars/car.webp"
         imgAlt=""
         heading="Book Your Dream Ride"
         Home="Home"
@@ -145,10 +145,10 @@ Please confirm availability
                   <p className="text-sm sm:text-base break-all text-white/70">+91 9658041110</p>
                 </div>
 
-                <div className="flex items-start sm:items-center gap-3 sm:gap-4">
+                {/* <div className="flex items-start sm:items-center gap-3 sm:gap-4">
                   <Mail className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1 sm:mt-0" />
                   <p className="text-sm sm:text-base break-all text-white/70 ">info@domain.com</p>
-                </div>
+                </div> */}
 
                 <div className="flex items-start gap-3 sm:gap-4">
                   <MapPin className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 mt-1" />

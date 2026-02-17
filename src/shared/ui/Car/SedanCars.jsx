@@ -2,161 +2,152 @@ import React, { useState } from "react";
 import { ArrowRight, ArrowUpRight, Filter, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import i20 from "../../../assets/Sedan Cars/i20.avif"
-import i10 from "../../../assets/Sedan Cars/i10.avif"
-import fronx from "../../../assets/Sedan Cars/fronx.avif"
-import dzire from "../../../assets/Sedan Cars/dzire.avif"
-import baleno from "../../../assets/Sedan Cars/baleno.avif"
-import swift1 from "../../../assets/Sedan Cars/swift1.avif"
-import tiago from "../../../assets/Sedan Cars/tiago.avif"
-
 
 const SedanCars = () => {
   const [filterType, setFilterType] = useState("all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceMode, setPriceMode] = useState({});
+  const [loadedImages, setLoadedImages] = useState(false);
 
   const navigate = useNavigate();
-
 
   // car data
 
   const cars = [
-  {
-    id: 1,
-    name: "TATA Tiago",
-    image:tiago,
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1399,
-    price24h: 1799,
-    features: [
-      "AC",
-      "Power Steering",
-      "Harman Music System",
-      "Bluetooth",
-      "USB Charging",
-      "Dual Airbags",
-      "ABS",
-    ],
-  },
-  {
-    id: 2,
-    name: "Maruti Suzuki Swift",
-    image:swift1,
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1499,
-    price24h: 1899,
-    features: [
-      "AC",
-      "Touchscreen Infotainment",
-      "Bluetooth",
-      "USB Charging",
-      "Power Windows",
-      "Dual Airbags",
-      "ABS",
-    ],
-  },
-  {
-    id: 3,
-    name: "Maruti Suzuki Fronx",
-    image:fronx,
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1799,
-    price24h: 2399,
-    features: [
-      "AC",
-      "Touchscreen Infotainment",
-      "Android Auto / Apple CarPlay",
-      "Bluetooth",
-      "Rear Camera",
-      "Dual Airbags",
-      "ABS",
-    ],
-  },
-  {
-    id: 4,
-    name: "Maruti Suzuki Baleno",
-    image:baleno,
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1499,
-    price24h: 1899,
-    features: [
-      "AC",
-      "Touchscreen Infotainment",
-      "Bluetooth",
-      "USB Charging",
-      "Rear Parking Sensors",
-      "Dual Airbags",
-      "ABS",
-    ],
-  },
-  {
-    id: 5,
-    name: "Hyundai i20 Asta",
-    image:i20,
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1499,
-    price24h: 1899,
-    features: [
-      "AC",
-      "10.25-inch Touchscreen",
-      "Bluetooth",
-      "Wireless Charger",
-      "Rear Camera",
-      "Dual Airbags",
-      "ABS",
-    ],
-  },
-  {
-    id: 6,
-    name: "Hyundai i10 Nios",
-    image:i10,
-    seater: "5 Seater Car",
-    transmission: "Automatic",
-    fuel: "Petrol",
-    price12h: 1499,
-    price24h: 1899,
-    features: [
-      "AC",
-      "Touchscreen Infotainment",
-      "Bluetooth",
-      "USB Charging",
-      "Rear Parking Sensors",
-      "Dual Airbags",
-      "ABS",
-    ],
-  },
-  {
-    id: 7,
-    name: "Maruti Suzuki Swift Dzire",
-    image: dzire,
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1499,
-    price24h: 1899,
-    features: [
-      "AC",
-      "Touchscreen Infotainment",
-      "Bluetooth",
-      "USB Charging",
-      "Rear Camera",
-      "Dual Airbags",
-      "ABS",
-    ],
-  },
-];
-
+    {
+      id: 1,
+      name: "TATA Tiago",
+      image: "/SedanCars/tiago.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1399,
+      price24h: 1799,
+      features: [
+        "AC",
+        "Power Steering",
+        "Harman Music System",
+        "Bluetooth",
+        "USB Charging",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 2,
+      name: "Maruti Suzuki Swift",
+      image: "/SedanCars/swift1.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Bluetooth",
+        "USB Charging",
+        "Power Windows",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 3,
+      name: "Maruti Suzuki Fronx",
+      image: "/SedanCars/fronx.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1799,
+      price24h: 2399,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Android Auto / Apple CarPlay",
+        "Bluetooth",
+        "Rear Camera",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 4,
+      name: "Maruti Suzuki Baleno",
+      image: "/SedanCars/baleno.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Bluetooth",
+        "USB Charging",
+        "Rear Parking Sensors",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 5,
+      name: "Hyundai i20 Asta",
+      image: "/SedanCars/i20.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "10.25-inch Touchscreen",
+        "Bluetooth",
+        "Wireless Charger",
+        "Rear Camera",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 6,
+      name: "Hyundai i10 Nios",
+      image: "/SedanCars/i10.webp",
+      seater: "5 Seater Car",
+      transmission: "Automatic",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Bluetooth",
+        "USB Charging",
+        "Rear Parking Sensors",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 7,
+      name: "Maruti Suzuki Swift Dzire",
+      image: "/SedanCars/dzire.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Bluetooth",
+        "USB Charging",
+        "Rear Camera",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+  ];
 
   // Filter logic
   let filteredCars = cars;
@@ -176,7 +167,7 @@ const SedanCars = () => {
         ...car,
         selectedMode,
         selectedPrice: selectedMode === "12h" ? car.price12h : car.price24h,
-        category: "sedan"
+        category: "sedan",
       },
     });
   };
@@ -311,14 +302,34 @@ const SedanCars = () => {
                     <div className="relative">
                       {/* Car Image */}
                       <div className="relative h-48 bg-gradient-to-br from-zinc-100 to-zinc-50 overflow-hidden">
+                        {/* ✅ Skeleton */}
+                        {!loadedImages[car.id] && (
+                          <div className="absolute inset-0 bg-zinc-200 animate-pulse z-10" />
+                        )}
+
                         <img
                           loading={index < 2 ? "eager" : "lazy"}
-                          fetchPriority={index < 2 ? "high" : "auto"}
+                          fetchpriority={index < 2 ? "high" : "auto"}
                           src={car.image}
                           alt={car.name}
+                          onLoad={() =>
+                            setLoadedImages((prev) => ({
+                              ...prev,
+                              [car.id]: true,
+                            }))
+                          }
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          style={{
+                            opacity: loadedImages[car.id] ? 1 : 0,
+                            filter: loadedImages[car.id]
+                              ? "blur(0px)"
+                              : "blur(12px)",
+                            transition: "opacity 0.4s ease, filter 0.4s ease",
+                          }}
                         />
                       </div>
+
+                      {/* Seater badge (UNCHANGED) */}
                       <div className="absolute top-40 left-4 z-10">
                         <span className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-xs font-medium text-black">
                           {car.seater}

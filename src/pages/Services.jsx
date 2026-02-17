@@ -28,7 +28,7 @@ function Services() {
       </Helmet>
       {/* Hero Section */}
       <BgHero
-        imgSrc={about}
+        imgSrc="/Services/lambo.webp"
         imgAlt=""
         heading="Explore Our Services"
         Home="Home"
@@ -52,7 +52,7 @@ function Services() {
                 }}
               >
                 <img
-                  src={one}
+                  src="/Services/one.webp"
                   loading="eager"
                   decoding="async"
                   alt="Car Rental Services"

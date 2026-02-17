@@ -1,7 +1,9 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const ServiceCard = ({ Icon, title, desc }) => {
+  const navigate = useNavigate();
   return (
     <motion.div
       initial="initial"
@@ -62,6 +64,7 @@ const ServiceCard = ({ Icon, title, desc }) => {
         }}
         transition={{ duration: 0.3 }}
         className="relative w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 lg:w-12 lg:h-12 rounded-full flex items-center justify-center z-10 mt-4 sm:mt-5"
+        onClick={()=>navigate("/services")}
       >
         {/* Arrow ↗ */}
         <motion.div

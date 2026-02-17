@@ -17,22 +17,22 @@ export default function FeaturesSection() {
     {
       title: "Instant Booking",
       desc: "Book your car instantly with real-time availability and quick confirmation.",
-      img: Four,
+      img: "/Services/Four.webp",
     },
     {
       title: "Well-Maintained Cars",
       desc: "Clean, serviced, and safety-checked vehicles for a smooth driving experience.",
-      img: three,
+      img: "/Services/three.webp",
     },
     {
       title: "Flexible Pricing",
       desc: "Hourly, daily, and monthly rental plans with transparent pricing.",
-      img: Five,
+      img: "/Services/Five.webp",
     },
     {
       title: "Self-Drive Rentals",
       desc: "Enjoy total freedom with self-drive cars—no driver, no restrictions.",
-      img: two,
+      img: "/Services/two.webp",
     },
   ];
 

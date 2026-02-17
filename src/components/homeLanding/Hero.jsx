@@ -6,22 +6,31 @@ import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
   const [show, setShow] = useState(false);
+    const [videoLoaded, setVideoLoaded] = useState(false);
 const navigate = useNavigate();
   useEffect(() => {
     const t = setTimeout(() => setShow(true), 150);
     return () => clearTimeout(t);
   }, []);
 
+    useEffect(() => {
+    // Only show content when video is ready
+    if (videoLoaded) {
+      const t = setTimeout(() => setShow(true), 150);
+      return () => clearTimeout(t);
+    }
+  }, [videoLoaded]);
   return (
     <section className="relative min-h-[100svh] flex items-center overflow-hidden bg-black">
       {/* ===== Background Video ===== */}
       <div className="absolute inset-0 z-0">
-        <video
+           <video
           autoPlay
           loop
           muted
           playsInline
-          preload="metadata"
+          preload="auto"
+          onLoadedData={() => setVideoLoaded(true)}
           className="w-full h-full object-cover scale-105 brightness-[1.25] contrast-[1.5]"
         >
           <source src={carVideo} type="video/mp4" />
@@ -119,7 +128,7 @@ const navigate = useNavigate();
       w-full sm:w-30 md:w-40 lg:w-40 
       h-12 sm:h-11 
       rounded-full
-       border border-gray-900/80
+       border border-gray-600/90
       bg-black/50 backdrop-blur
       text-white text-sm sm:text-base md:text-lg font-medium
       relative overflow-hidden
@@ -145,7 +154,7 @@ const navigate = useNavigate();
      w-full sm:w-20 md:w-40 lg:w-40 
       h-12 sm:h-11
       rounded-full
-       border border-gray-900/80
+       border border-gray-600/90
       bg-black/50 backdrop-blur
       text-white text-sm sm:text-base md:text-lg font-medium
       relative overflow-hidden

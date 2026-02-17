@@ -28,7 +28,7 @@ export default function CarCard({ title, image }) {
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-between p-4 xs:p-5 sm:p-6">
-        <h3 className="text-gray-900 text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-lg">
+        <h3 className="text-black text-lg xs:text-xl sm:text-2xl md:text-3xl font-bold drop-shadow-lg">
           {title}
         </h3>
 
@@ -57,4 +57,4 @@ export default function CarCard({ title, image }) {
       </div>
     </div>
   );
-}
+} 

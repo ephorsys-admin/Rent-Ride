@@ -1,15 +1,12 @@
 import { motion } from "framer-motion";
 import CarCard from "../../shared/ui/Services/CardCard";
-import one from "../../assets/cars/one.avif";
-import two from "../../assets/cars/two.avif";
-import three from "../../assets/cars/three.avif";
 import { useNavigate } from "react-router-dom";
 
 const cars = [
-  { id: 1, title: "SEDAN", image: one, path: "/cars" },
-  { id: 2, title: "SUV", image: two, path: "/cars/" },
-  { id: 3, title: "SPORTS", image: three, path: "/cars" },
-  { id: 4, title: "PREMIUM", image: three, path: "/cars" },
+ { id: 1, title: "SEDAN", image: "/homecars/sedan.webp",  },
+  { id: 2, title: "SUV", image: "/homecars/SUV.webp",  },
+  { id: 3, title: "SPORTS",image: "/homecars/one.webp",  },
+  { id: 4, title: "PREMIUM",image: "/homecars/two.webp",  },
 ];
 
 
@@ -40,7 +37,7 @@ export default function CarsTypes() {
           ease: [0.25, 0.1, 0.25, 1],
         }}
         style={{ willChange: "transform, opacity" }}
-        onClick={() => navigate(car.path)}
+        onClick={() => navigate("/cars")}
         
       >
         <CarCard title={car.title} image={car.image} />
