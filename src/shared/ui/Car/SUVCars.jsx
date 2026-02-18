@@ -15,52 +15,10 @@ const SUVCars = () => {
 
   // car data
 const cars = [
+  
+ 
   {
-    id: 11,
-    name: "Maruti Suzuki Brezza",
-    image: "/SUVCars/brezza.webp",
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1899,
-    price24h: 2399,
-    features: ["Touchscreen", "ABS", "Airbags", "Rear Camera", "Cruise Control"],
-  },
-  {
-    id: 12,
-    name: "Hyundai Venue",
-    image: "/SUVCars/venue.webp",
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1899,
-    price24h: 2399,
-    features: ["Sunroof", "Wireless Android Auto", "Airbags", "Parking Sensors"],
-  },
-  {
-    id: 13,
-    name: "Kia Carens Clavis",
-    image: "/SUVCars/carens.webp",
-    seater: "7 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 2499,
-    price24h: 2999,
-    features: ["Captain Seats", "Panoramic Sunroof", "Ventilated Seats", "Airbags"],
-  },
-  {
-    id: 14,
-    name: "Kia Carens Clavis",
-    image: "/SUVCars/clavis.webp",
-    seater: "7 Seater Car",
-    transmission: "Automatic",
-    fuel: "Diesel",
-    price12h: 2699,
-    price24h: 3299,
-    features: ["Automatic Gearbox", "Smart Infotainment", "Rear Camera", "Cruise Control"],
-  },
-  {
-    id: 15,
+    id: 9,
     name: "Mahindra XUV 500",
     image: "/SUVCars/XUV.webp",
     seater: "7 Seater Car",
@@ -71,7 +29,7 @@ const cars = [
     features: ["AWD", "Sunroof", "Leather Seats", "Navigation System"],
   },
   {
-    id: 16,
+    id: 10,
     name: "Mahindra Thar",
     image: "/SUVCars/thar.webp",
     seater: "4 Seater Car",
@@ -82,7 +40,7 @@ const cars = [
     features: ["4x4 Mode", "Off-road Tyres", "Removable Roof", "Hill Assist"],
   },
   {
-    id: 17,
+    id: 11,
     name: "Mahindra Scorpio N",
     image: "/SUVCars/N.webp",
     seater: "7 Seater Car",
@@ -92,27 +50,39 @@ const cars = [
     price24h: 3999,
     features: ["4WD", "Sunroof", "Advanced Driver Assist", "Power Steering"],
   },
+ 
   {
-    id: 18,
-    name: "Hyundai Exter",
-    image: "/SUVCars/exter.webp",
-    seater: "5 Seater Car",
-    transmission: "Automatic",
-    fuel: "Petrol",
-    price12h: 1899,
-    price24h: 2399,
-    features: ["Dashcam", "Digital Cluster", "Wireless Charging", "Keyless Entry"],
-  },
-  {
-    id: 19,
-    name: "Tata Nexon",
-    image: "/SUVCars/Nexon.webp",
+    id: 12,
+    name: "Maruti Suzuki Brezza (compact suv)",
+    image: "/SUVCars/brezza.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
     fuel: "Petrol",
     price12h: 1899,
     price24h: 2399,
-    features: ["5 Star Safety", "Sunroof", "JBL Speakers", "360 Camera"],
+    features: ["Touchscreen", "ABS", "Airbags", "Rear Camera", "Cruise Control"],
+  },
+  {
+    id: 13,
+    name: "Hyundai Venue (compact suv)",
+    image: "/SUVCars/venue.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1899,
+    price24h: 2399,
+    features: ["Sunroof", "Wireless Android Auto", "Airbags", "Parking Sensors"],
+  },
+  {
+    id: 13,
+    name: "Maruti suzuki fronx",
+    image: "/SUVCars/fronx.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1799,
+    price24h: 2399,
+    features: ["Sunroof", "Wireless Android Auto", "Airbags", "Parking Sensors"],
   },
 ];
 
@@ -185,9 +155,9 @@ const cars = [
                 <h2 className="text-white text-lg font-semibold mb-1">
                   Filter By
                 </h2>
-                <p className="text-zinc-500 text-sm">
+                <span className="text-zinc-500 text-sm">
                   {filteredCars.length} vehicles available
-                </p>
+                </span>
               </div>
 
               {/* Fuel Type Filter */}
@@ -229,9 +199,9 @@ const cars = [
                 <h1 className="text-white text-3xl sm:text-4xl font-bold mb-2">
                   SUV <span className="text-white">Cars</span>
                 </h1>
-                <p className="text-zinc-400">
+                <span className="text-zinc-400">
                   Choose from our premium collection
-                </p>
+                </span>
               </div>
 
               {/* Mobile Filter Toggle */}

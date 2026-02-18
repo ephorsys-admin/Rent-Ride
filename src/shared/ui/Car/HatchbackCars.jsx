@@ -3,7 +3,7 @@ import { ArrowRight, ArrowUpRight, Filter, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const SedanCars = () => {
+const HatchbackCars = () => {
   const [filterType, setFilterType] = useState("all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceMode, setPriceMode] = useState({});
@@ -15,9 +15,28 @@ const SedanCars = () => {
 
   const cars = [
     {
-      id: 1,
-      name: "Maruti Suzuki Swift Dzire",
-      image: "/SedanCars/dzire.webp",
+      id: 4,
+      name: "Tata Tiago XT Rhythm",
+      image: "/HatchbackCars/tiago.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1399,
+      price24h: 1799,
+      features: [
+        "AC",
+        "Power Steering",
+        "Harman Music System",
+        "Bluetooth",
+        "USB Charging",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 5,
+      name: "Maruti Suzuki Swift VXi ",
+      image: "/HatchbackCars/swift1.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
       fuel: "Petrol",
@@ -28,41 +47,69 @@ const SedanCars = () => {
         "Touchscreen Infotainment",
         "Bluetooth",
         "USB Charging",
+        "Power Windows",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 6,
+      name: "Maruti Suzuki Baleno Zeta",
+      image: "/HatchbackCars/baleno.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Android Auto / Apple CarPlay",
+        "Bluetooth",
         "Rear Camera",
         "Dual Airbags",
         "ABS",
       ],
     },
     {
-      id: 2,
-      name: "Maruti Suzuki Ciaz Delta",
-      image: "/SedanCars/dzire.webp",
+      id: 7,
+      name: "Hyundai i20 Asta",
+      image: "/HatchbackCars/baleno.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
       fuel: "Petrol",
-      price12h: 1799,
-      price24h: 2399,
+      price12h: 1499,
+      price24h: 1899,
       features: [
         "AC",
         "Touchscreen Infotainment",
         "Bluetooth",
         "USB Charging",
+        "Rear Parking Sensors",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 8,
+      name: "Hyundai i10 Nios",
+      image: "/HatchbackCars/i20.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "10.25-inch Touchscreen",
+        "Bluetooth",
+        "Wireless Charger",
         "Rear Camera",
         "Dual Airbags",
         "ABS",
       ],
     },
-      {
-    id: 3,
-    name: "Tata Nexon",
-    image: "/SedanCars/Nexon.webp",
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1899,
-    price24h: 2399,
-    features: ["5 Star Safety", "Sunroof", "JBL Speakers", "360 Camera"],
-  },
+
   ];
 
   // Filter logic
@@ -83,7 +130,7 @@ const SedanCars = () => {
         ...car,
         selectedMode,
         selectedPrice: selectedMode === "12h" ? car.price12h : car.price24h,
-        category: "sedan",
+        category: "Hatchback",
       },
     });
   };
@@ -175,7 +222,7 @@ const SedanCars = () => {
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h1 className="text-white text-3xl sm:text-4xl font-bold mb-2">
-                  Sedan <span className="text-white">Cars</span>
+                  Hatchback <span className="text-white">Cars</span>
                 </h1>
                 <span className="text-zinc-400">
                   Choose from our premium collection
@@ -392,4 +439,4 @@ const SedanCars = () => {
   );
 };
 
-export default SedanCars;
+export default HatchbackCars;
