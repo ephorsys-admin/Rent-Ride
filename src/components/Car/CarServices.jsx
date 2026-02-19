@@ -4,7 +4,7 @@ import SUVCars from "../../shared/ui/Car/SUVCars";
 
 import { Car, Truck, CarFront } from "lucide-react";
 import { useLocation } from "react-router-dom";
-import HatchbackCars from "../../Shared/ui/Car/HatchbackCars";
+import HatchbackCars from "../../shared/ui/Car/HatchbackCars";
 
 const CarServices = () => {
   const location = useLocation();
