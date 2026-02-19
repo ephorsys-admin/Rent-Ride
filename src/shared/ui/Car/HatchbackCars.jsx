@@ -3,88 +3,114 @@ import { ArrowRight, ArrowUpRight, Filter, X } from "lucide-react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-
-
-
-const SUVCars = () => {
+const HatchbackCars = () => {
   const [filterType, setFilterType] = useState("all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceMode, setPriceMode] = useState({});
-    const [loadedImages, setLoadedImages] = useState(false);
+  const [loadedImages, setLoadedImages] = useState(false);
+
   const navigate = useNavigate();
 
   // car data
-const cars = [
-  
- 
-  {
-    id: 9,
-    name: "Mahindra XUV 500",
-    image: "/SUVCars/XUV.webp",
-    seater: "7 Seater Car",
-    transmission: "Manual",
-    fuel: "Diesel",
-    price12h: 2999,
-    price24h: 3599,
-    features: ["AWD", "Sunroof", "Leather Seats", "Navigation System"],
-  },
-  {
-    id: 10,
-    name: "Mahindra Thar",
-    image: "/SUVCars/thar.webp",
-    seater: "4 Seater Car",
-    transmission: "Manual (RWD)",
-    fuel: "Petrol",
-    price12h: 3199,
-    price24h: 3599,
-    features: ["4x4 Mode", "Off-road Tyres", "Removable Roof", "Hill Assist"],
-  },
-  {
-    id: 11,
-    name: "Mahindra Scorpio N",
-    image: "/SUVCars/N.webp",
-    seater: "7 Seater Car",
-    transmission: "Manual",
-    fuel: "Diesel",
-    price12h: 3499,
-    price24h: 3999,
-    features: ["4WD", "Sunroof", "Advanced Driver Assist", "Power Steering"],
-  },
- 
-  {
-    id: 12,
-    name: "Maruti Suzuki Brezza (compact suv)",
-    image: "/SUVCars/brezza.webp",
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1899,
-    price24h: 2399,
-    features: ["Touchscreen", "ABS", "Airbags", "Rear Camera", "Cruise Control"],
-  },
-  {
-    id: 13,
-    name: "Hyundai Venue (compact suv)",
-    image: "/SUVCars/venue.webp",
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1899,
-    price24h: 2399,
-    features: ["Sunroof", "Wireless Android Auto", "Airbags", "Parking Sensors"],
-  },
-  {
-    id: 13,
-    name: "Maruti suzuki fronx",
-    image: "/SUVCars/fronx.webp",
-    seater: "5 Seater Car",
-    transmission: "Manual",
-    fuel: "Petrol",
-    price12h: 1799,
-    price24h: 2399,
-    features: ["Sunroof", "Wireless Android Auto", "Airbags", "Parking Sensors"],
-  },
-];
+
+  const cars = [
+    {
+      id: 4,
+      name: "Tata Tiago XT Rhythm",
+      image: "/HatchbackCars/tiago.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1399,
+      price24h: 1799,
+      features: [
+        "AC",
+        "Power Steering",
+        "Harman Music System",
+        "Bluetooth",
+        "USB Charging",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 5,
+      name: "Maruti Suzuki Swift VXi ",
+      image: "/HatchbackCars/swift1.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Bluetooth",
+        "USB Charging",
+        "Power Windows",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 6,
+      name: "Maruti Suzuki Baleno Zeta",
+      image: "/HatchbackCars/baleno.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Android Auto / Apple CarPlay",
+        "Bluetooth",
+        "Rear Camera",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 7,
+      name: "Hyundai i20 Asta",
+      image: "/HatchbackCars/i20.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "Touchscreen Infotainment",
+        "Bluetooth",
+        "USB Charging",
+        "Rear Parking Sensors",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+    {
+      id: 8,
+      name: "Hyundai i10 Nios",
+      image: "/HatchbackCars/i10.webp",
+      seater: "5 Seater Car",
+      transmission: "Manual",
+      fuel: "Petrol",
+      price12h: 1499,
+      price24h: 1899,
+      features: [
+        "AC",
+        "10.25-inch Touchscreen",
+        "Bluetooth",
+        "Wireless Charger",
+        "Rear Camera",
+        "Dual Airbags",
+        "ABS",
+      ],
+    },
+
+  ];
 
   // Filter logic
   let filteredCars = cars;
@@ -95,7 +121,6 @@ const cars = [
     );
   }
 
-
   const HandleClick = (car) => {
     const selectedMode = priceMode[car.id] || "24h";
     const selectedPrice = selectedMode === "12h" ? car.price12h : car.price24h;
@@ -104,8 +129,8 @@ const cars = [
       state: {
         ...car,
         selectedMode,
-        category: "suv",
         selectedPrice: selectedMode === "12h" ? car.price12h : car.price24h,
+        category: "Hatchback",
       },
     });
   };
@@ -197,7 +222,7 @@ const cars = [
             <div className="flex items-center justify-between mb-8">
               <div>
                 <h1 className="text-white text-3xl sm:text-4xl font-bold mb-2">
-                  SUV <span className="text-white">Cars</span>
+                  Hatchback <span className="text-white">Cars</span>
                 </h1>
                 <span className="text-zinc-400">
                   Choose from our premium collection
@@ -237,42 +262,43 @@ const cars = [
                     className="group bg-white rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-red-600/10 hover:-translate-y-1 w-full max-w-[360px]"
                   >
                     {/* Seater Badge */}
-               <div className="relative">
-  {/* Car Image */}
-  <div className="relative h-48 bg-gradient-to-br from-zinc-100 to-zinc-50 overflow-hidden">
+                    <div className="relative">
+                      {/* Car Image */}
+                      <div className="relative h-48 bg-gradient-to-br from-zinc-100 to-zinc-50 overflow-hidden">
+                        {/* ✅ Skeleton */}
+                        {!loadedImages[car.id] && (
+                          <div className="absolute inset-0 bg-zinc-200 animate-pulse z-10" />
+                        )}
 
-    {/* Skeleton */}
-    {!loadedImages[car.id] && (
-      <div className="absolute inset-0 bg-zinc-200 animate-pulse z-10" />
-    )}
+                        <img
+                          loading={index < 2 ? "eager" : "lazy"}
+                          fetchpriority={index < 2 ? "high" : "auto"}
+                          src={car.image}
+                          alt={car.name}
+                          onLoad={() =>
+                            setLoadedImages((prev) => ({
+                              ...prev,
+                              [car.id]: true,
+                            }))
+                          }
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                          style={{
+                            opacity: loadedImages[car.id] ? 1 : 0,
+                            filter: loadedImages[car.id]
+                              ? "blur(0px)"
+                              : "blur(12px)",
+                            transition: "opacity 0.4s ease, filter 0.4s ease",
+                          }}
+                        />
+                      </div>
 
-    <img
-      loading={index < 2 ? "eager" : "lazy"}
-      fetchpriority={index < 2 ? "high" : "auto"}
-      src={car.image}
-      alt={car.name}
-      onLoad={() =>
-        setLoadedImages((prev) => ({
-          ...prev,
-          [car.id]: true,
-        }))
-      }
-      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-      style={{
-        opacity: loadedImages[car.id] ? 1 : 0,
-        filter: loadedImages[car.id] ? "blur(0px)" : "blur(12px)",
-        transition: "opacity 0.4s ease, filter 0.4s ease",
-      }}
-    />
-  </div>
-
-  <div className="absolute top-40 left-4 z-10">
-    <span className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-xs font-medium text-black">
-      {car.seater}
-    </span>
-  </div>
-</div>
-
+                      {/* Seater badge (UNCHANGED) */}
+                      <div className="absolute top-40 left-4 z-10">
+                        <span className="px-3 py-1.5 bg-white/95 backdrop-blur-sm rounded-full text-xs font-medium text-black">
+                          {car.seater}
+                        </span>
+                      </div>
+                    </div>
 
                     {/* Card Content */}
                     <div className="p-6">
@@ -413,4 +439,4 @@ const cars = [
   );
 };
 
-export default SUVCars;
+export default HatchbackCars;
