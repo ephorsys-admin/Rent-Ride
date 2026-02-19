@@ -74,7 +74,7 @@ const HatchbackCars = () => {
     {
       id: 7,
       name: "Hyundai i20 Asta",
-      image: "/HatchbackCars/baleno.webp",
+      image: "/HatchbackCars/i20.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
       fuel: "Petrol",
@@ -93,7 +93,7 @@ const HatchbackCars = () => {
     {
       id: 8,
       name: "Hyundai i10 Nios",
-      image: "/HatchbackCars/i20.webp",
+      image: "/HatchbackCars/i10.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
       fuel: "Petrol",
