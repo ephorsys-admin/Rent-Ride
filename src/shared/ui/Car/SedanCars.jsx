@@ -65,7 +65,7 @@ const SedanCars = () => {
   },
       {
     id: 3,
-    name: "Hundai Exter",
+    name: "Hyundai Exter",
     image: "/SedanCars/exter.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
