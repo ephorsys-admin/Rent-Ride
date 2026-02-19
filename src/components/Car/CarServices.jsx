@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import SedanCars from "../../shared/ui/Car/SedanCars";
 import SUVCars from "../../shared/ui/Car/SUVCars";
-import HatchbackCars from "../../Shared/ui/Car/HatchbackCars";
+
 import { Car, Truck, CarFront } from "lucide-react";
 import { useLocation } from "react-router-dom";
+import HatchbackCars from "../../Shared/ui/Car/HatchbackCars";
 
 const CarServices = () => {
   const location = useLocation();
