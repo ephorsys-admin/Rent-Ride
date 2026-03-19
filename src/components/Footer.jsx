@@ -220,7 +220,7 @@ const Footer = () => {
 
             {/* Instagram */}
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/rentridebbsr?utm_source=qr&igsh=MXFmeXZjZmVidWY2aQ=="
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
