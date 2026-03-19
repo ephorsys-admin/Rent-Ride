@@ -12,10 +12,31 @@ import {
 } from "lucide-react";
 
 import LocationMap from "../components/Contact/LocationMap";
-
 import { carModels } from "../components/Contact/carData";
 import Bghero from "../helpers/BgHero";
 
+const SOCIALS = [
+  {
+    Icon: Facebook,
+    href: "https://facebook.com",
+    label: "Facebook",
+  },
+  {
+    Icon: Twitter,
+    href: "https://twitter.com",
+    label: "Twitter",
+  },
+  {
+    Icon: Linkedin,
+    href: "https://linkedin.com",
+    label: "LinkedIn",
+  },
+  {
+    Icon: Instagram,
+    href: "https://www.instagram.com/rentridebbsr?utm_source=qr&igsh=MXFmeXZjZmVidWY2aQ==",
+    label: "Instagram",
+  },
+];
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -120,7 +141,7 @@ Please confirm availability
       </Helmet>
 
       <Bghero
-         imgSrc="/SedanCars/car.webp"
+        imgSrc="/SedanCars/car.webp"
         imgAlt=""
         heading="Book Your Dream Ride"
         Home="Home"
@@ -160,11 +181,15 @@ Please confirm availability
               </div>
             </div>
 
+            {/* Social Links */}
             <div className="flex flex-wrap gap-3 sm:gap-4 mt-8 sm:mt-10 lg:mt-12">
-              {[Facebook, Twitter, Linkedin, Instagram].map((Icon, i) => (
+              {SOCIALS.map(({ Icon, href, label }) => (
                 <a
-                  key={i}
-                  href="#"
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={label}
                   className="w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 rounded-full border border-[#ff0000] flex items-center justify-center bg-[#ff0000] hover:text-black transition"
                 >
                   <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -175,7 +200,6 @@ Please confirm availability
 
           {/* RIGHT SECTION */}
           <div className="bg-gradient-to-br from-[#141414] via-[#1a1a1a] to-[#0f0f0f] px-4 py-6 sm:px-6 sm:py-8 md:px-8 md:py-10 lg:px-12 lg:py-12">
-
             <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-7 md:space-y-8">
               {/* Row 1 - Full Name & Phone */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-5 md:gap-6">
@@ -226,14 +250,12 @@ Please confirm availability
                     className="w-full min-h-[40px] sm:min-h-[44px] px-3 sm:px-4 py-2 sm:py-2.5 flex items-center justify-between rounded-md bg-[#1a1a1a] border border-gray-600 text-white cursor-pointer"
                   >
                     <span
-                      className={`text-sm sm:text-base ${formData.selectedCar ? "text-white" : "text-gray-400"
-                        }`}
+                      className={`text-sm sm:text-base ${formData.selectedCar ? "text-white" : "text-gray-400"}`}
                     >
                       {formData.selectedCar || "Choose Vehicle"}
                     </span>
                     <ChevronDown
-                      className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 transition-transform ${isOpen ? "rotate-180" : ""
-                        }`}
+                      className={`w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 transition-transform ${isOpen ? "rotate-180" : ""}`}
                     />
                   </div>
 
@@ -274,10 +296,11 @@ Please confirm availability
                         onClick={() =>
                           setFormData({ ...formData, rentalDuration: time })
                         }
-                        className={`px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-full border transition ${formData.rentalDuration === time
-                          ? "bg-[#ff0000] border-[#ff0000] text-white"
-                          : "border-gray-600 text-gray-300 hover:border-[#ff0000]"
-                          }`}
+                        className={`px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-full border transition ${
+                          formData.rentalDuration === time
+                            ? "bg-[#ff0000] border-[#ff0000] text-white"
+                            : "border-gray-600 text-gray-300 hover:border-[#ff0000]"
+                        }`}
                       >
                         {time}
                       </button>
@@ -313,13 +336,14 @@ Please confirm availability
                     !formData.selectedCar ||
                     !formData.rentalDuration
                   }
-                  className={`w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full font-semibold transition ${formData.fullname &&
+                  className={`w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full font-semibold transition ${
+                    formData.fullname &&
                     formData.phone &&
                     formData.selectedCar &&
                     formData.rentalDuration
-                    ? "bg-[#ff0000] text-white hover:bg-[#cc0000]"
-                    : "bg-gray-600 text-gray-300 cursor-not-allowed"
-                    }`}
+                      ? "bg-[#ff0000] text-white hover:bg-[#cc0000]"
+                      : "bg-gray-600 text-gray-300 cursor-not-allowed"
+                  }`}
                 >
                   Book Now
                 </button>
