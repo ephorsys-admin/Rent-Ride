@@ -4,6 +4,7 @@ import CarSliding from '../components/homeLanding/CarSliding'
 import HomeAbout from '../components/homeLanding/homeAbout'
 import Features from '../components/homeLanding/Features'
 import TrustedBrands from '../components/homeLanding/TrustedBrands'
+import VideoSection from '../components/homeLanding/VideoSection'
 import HowItWorks from '../components/homeLanding/HowItWorks'
 import Feedback from '../components/homeLanding/Feedback'
 import FAQ from '../components/homeLanding/Faq'
@@ -37,6 +38,7 @@ const Home = () => {
         <CarsTypes />
         <Features />
         <TrustedBrands />
+        <VideoSection />
 
         <HowItWorks />
         <Feedback />
