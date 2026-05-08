@@ -3,10 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Play, Pause, X } from 'lucide-react';
 
 const videos = [
-  { id: 1, url: 'https://res.cloudinary.com/devrmpo2p/video/upload/v1778231750/160904_y5c6ky.mp4', title: 'Pure Power' },
-  { id: 2, url: 'https://res.cloudinary.com/devrmpo2p/video/upload/v1778231817/160050_xptlxi.mp4', title: 'Dynamic Performance' },
-  { id: 3, url: 'https://res.cloudinary.com/devrmpo2p/video/upload/v1778231817/160016_zo9gwj.mp4', title: 'Luxury Redefined' },
-  { id: 4, url: 'https://res.cloudinary.com/devrmpo2p/video/upload/v1778231820/160052_pvnhxa.mp4', title: 'Urban Legend' },
+  { id: 1, url: 'https://res.cloudinary.com/devrmpo2p/video/upload/q_auto,f_auto/v1778231750/160904_y5c6ky.mp4', title: 'Pure Power' },
+  { id: 2, url: 'https://res.cloudinary.com/devrmpo2p/video/upload/q_auto,f_auto/v1778231817/160050_xptlxi.mp4', title: 'Dynamic Performance' },
+  { id: 3, url: 'https://res.cloudinary.com/devrmpo2p/video/upload/q_auto,f_auto/v1778231817/160016_zo9gwj.mp4', title: 'Luxury Redefined' },
+  { id: 4, url: 'https://res.cloudinary.com/devrmpo2p/video/upload/q_auto,f_auto/v1778231820/160052_pvnhxa.mp4', title: 'Urban Legend' },
 ];
 
 const VideoCard = ({ video, onOpen }) => {
@@ -23,6 +23,7 @@ const VideoCard = ({ video, onOpen }) => {
           className="w-full h-full object-cover"
           muted
           playsInline
+          preload="metadata"
         />
         
         {/* Overlay */}
@@ -120,6 +121,7 @@ const VideoSection = () => {
                 controls
                 autoPlay
                 loop
+                preload="auto"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black via-transparent to-transparent">
                 <span className="text-[#ff0000] text-xs font-bold uppercase tracking-wider">Now Playing</span>
