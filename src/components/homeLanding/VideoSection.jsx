@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useRef, useMemo } from 'react';
+import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Play, Pause, X } from 'lucide-react';
 
 const videos = [
@@ -48,9 +48,13 @@ const VideoCard = ({ video, onOpen }) => {
 
 const VideoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
+
+  const memoizedVideos = useMemo(() => [...videos, ...videos, ...videos], []);
 
   return (
-    <div className="bg-[#000000] text-white px-4 sm:px-8 lg:px-16 pb-12 relative">
+    <div ref={ref} className="bg-[#000000] text-white px-4 sm:px-8 lg:px-16 pb-12 relative">
       {/* Heading */}
       <div className="flex flex-col items-center text-center mb-12">
         <motion.div
@@ -81,11 +85,42 @@ const VideoSection = () => {
         </p>
       </div>
 
-      {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {videos.map((video) => (
-          <VideoCard key={video.id} video={video} onOpen={setSelectedVideo} />
-        ))}
+      {/* Continuous Scrolling Marquee */}
+      {isInView ? (
+        <div className="relative overflow-hidden -mx-4 sm:-mx-8 lg:-mx-16 py-4">
+          {/* Gradient Overlays */}
+          <div className="absolute inset-y-0 left-0 w-16 sm:w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+          <motion.div
+            className="flex gap-6"
+            animate={{ x: ["0%", "-33.333%"] }}
+            transition={{
+              ease: "linear",
+              duration: 25,
+              repeat: Infinity,
+            }}
+            style={{ width: "max-content" }}
+          >
+            {/* Render 3 times for seamless loop on wide screens */}
+            {memoizedVideos.map((video, index) => (
+              <div key={index} className="w-[260px] sm:w-[300px] flex-shrink-0">
+                <VideoCard video={video} onOpen={setSelectedVideo} />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+      ) : (
+        <div className="h-[400px] flex items-center justify-center">
+          <span className="text-gray-500 text-sm">Loading experience...</span>
+        </div>
+      )}
+
+      {/* Indicator */}
+      <div className="flex justify-center mt-8">
+        <span className="text-[#ff0000] text-xs font-bold tracking-[0.2em] uppercase opacity-70">
+          Drag to Scroll
+        </span>
       </div>
 
       {/* Lightbox Modal */}
