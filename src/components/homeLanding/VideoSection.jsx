@@ -18,12 +18,11 @@ const VideoCard = ({ video, onOpen }) => {
       onClick={() => onOpen(video)}
     >
       <div className="relative aspect-[9/16]">
-        <video
-          src={video.url}
+        <img
+          src={video.url.replace('.mp4', '.jpg')}
+          alt={video.title}
           className="w-full h-full object-cover"
-          muted
-          playsInline
-          preload="metadata"
+          loading="lazy"
         />
         
         {/* Overlay */}
@@ -48,6 +47,7 @@ const VideoCard = ({ video, onOpen }) => {
 
 const VideoSection = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.1 });
 
@@ -93,14 +93,18 @@ const VideoSection = () => {
           <div className="absolute inset-y-0 right-0 w-16 sm:w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
           <motion.div
-            className="flex gap-6"
-            animate={{ x: ["0%", "-33.333%"] }}
+            className="flex gap-6 cursor-grab active:cursor-grabbing"
+            animate={isAutoPlaying ? { x: ["0%", "-33.333%"] } : undefined}
             transition={{
               ease: "linear",
               duration: 25,
               repeat: Infinity,
             }}
             style={{ width: "max-content" }}
+            drag="x"
+            onDragStart={() => setIsAutoPlaying(false)}
+            onMouseDown={() => setIsAutoPlaying(false)}
+            dragConstraints={{ left: -2400, right: 0 }}
           >
             {/* Render 3 times for seamless loop on wide screens */}
             {memoizedVideos.map((video, index) => (
