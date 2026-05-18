@@ -12,8 +12,8 @@ export default function About() {
       <SEO
         title="About Us"
         description="Learn about Rent Ride Car, Bhubaneswar's trusted self-drive rental service. We provide safe, well-maintained vehicles, transparent pricing, and 24/7 customer support."
-        url="https://rentride.com/about"
-        canonical="https://rentride.com/about"
+        url="https://rentridecar.com/about"
+        canonical="https://rentridecar.com/about"
         keywords="about rent ride car, car rental company bhubaneswar, self drive rental services, car rental safety" 
       />
       <div className="scroll-smooth">

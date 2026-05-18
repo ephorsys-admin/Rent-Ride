@@ -64,8 +64,8 @@ const Footer = () => {
                 </div>
                 <div>
                   <h4 className="text-xs text-gray-500">Email</h4>
-                  <a href="mailto:info@rentride.com" className="text-sm text-gray-300 hover:text-[#FF0000] transition-colors duration-300 break-all">
-                    info@rentride.com
+                  <a href="mailto:info@rentridecar.com" className="text-sm text-gray-300 hover:text-[#FF0000] transition-colors duration-300 break-all">
+                    info@rentridecar.com
                   </a>
                 </div>
               </div> */}

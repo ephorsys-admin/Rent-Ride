@@ -12,8 +12,8 @@ const Bikes = () => {
       <SEO
         title="Bikes"
         description="Rent premium bikes in Bhubaneswar with Rent Ride Car. Enjoy convenient self-drive bike rental, affordable rates, and reliable service for short and long trips."
-        url="https://rentride.com/bikes"
-        canonical="https://rentride.com/bikes"
+        url="https://rentridecar.com/bikes"
+        canonical="https://rentridecar.com/bikes"
         keywords="bike rental bhubaneswar, self drive bike rental, bike hire bhubaneswar, bike rental service" 
       />
       <BgHero
