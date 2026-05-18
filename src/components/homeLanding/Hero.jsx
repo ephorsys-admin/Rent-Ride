@@ -51,7 +51,7 @@ const navigate = useNavigate();
             }}
           >
             <span className="inline-flex items-center gap-2 px-2 py-1 text-xs  rounded-full border border-red-500/10 bg-black-500/10 backdrop-blur text-white">
-              <span className="text-[#ff0000]">•</span>Premium Luxury Car Rentals
+              <span className="text-[#ff0000]">•</span>Rent Ride Car Car - Best Car Rental Service in Bhubaneswar
             </span>
           </div>
 

@@ -10,7 +10,7 @@ const Bikes = () => {
   return (
     <>
       <Helmet>
-        <title>Bikes | Rent Ride</title>
+        <title>Bikes | Rent Ride Car</title>
         <meta
           name="description"
           content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."

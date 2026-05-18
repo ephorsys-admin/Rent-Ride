@@ -29,7 +29,7 @@ const FAQ = () => {
     {
       question: "Are there any mileage restrictions?",
       answer:
-        "Our premium packages include unlimited mileage. Standard rentals come with 200 miles per day, with additional miles charged at $0.50 per mile.",
+        "Our premium packages include unlimited mileage. Standard rentals come with 400 kms per day, with additional miles charged at 50 INR/km.",
     },
     {
       question: "Can I extend my rental period?",

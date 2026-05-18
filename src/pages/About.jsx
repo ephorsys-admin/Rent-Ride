@@ -10,7 +10,7 @@ export default function About() {
   return (
     <>
       <Helmet>
-        <title>About Us | Rent Ride</title>
+        <title>About Us | Rent Ride Car</title>
         <meta
           name="description"
           content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."

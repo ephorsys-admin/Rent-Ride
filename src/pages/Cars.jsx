@@ -7,7 +7,7 @@ function Cars() {
   return (
     <>
       <Helmet>
-        <title>Cars | Rent Ride</title>
+        <title>Cars | Rent Ride Car</title>
         <meta
           name="description"
           content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
@@ -16,7 +16,7 @@ function Cars() {
       </Helmet>
       <Bghero
         imgSrc="/SedanCars/car.webp"
-        imgAlt={""}
+        imgAlt={"Sedan Car"}
         heading={"Explore Our Services"}
         Home={"Home"}
         service={"Cars"}

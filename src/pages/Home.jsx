@@ -16,11 +16,11 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Rent Ride | LuxurySelf-DriveCar
+        <title>Rent Ride Car | Luxury Self-Drive Car
           Rentals in Bhubaneswar </title>
         <meta
           name="description"
-          content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
+          content="Rent the Bhubaneswar's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
         />
         <link rel="canonical" href="https://rentride.com/" />
       </Helmet>

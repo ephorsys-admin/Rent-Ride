@@ -148,8 +148,7 @@ const CarRentalAbout = () => {
     ml-4 sm:ml-6 md:ml-0
   "
 >
-  Reliable car rentals made easy. Choose from well-maintained vehicles at affordable prices,
-  with flexible booking and hassle-free pickup for every journey.
+  Rent a premium self-drive car in Bhubaneswar with doorstep delivery across Patia, Chandrasekharpur, Infocity, and KIIT. Book in 60 seconds starting at just 1000 INR/Day !
 </p>
 
 

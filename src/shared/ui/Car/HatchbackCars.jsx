@@ -7,6 +7,7 @@ const HatchbackCars = () => {
   const [filterType, setFilterType] = useState("all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceMode, setPriceMode] = useState({});
+  const [globalPriceMode, setGlobalPriceMode] = useState("24h");
   const [loadedImages, setLoadedImages] = useState(false);
 
   const navigate = useNavigate();
@@ -17,6 +18,7 @@ const HatchbackCars = () => {
     {
       id: 4,
       name: "Tata Tiago XT Rhythm",
+      tabname: "Tiago-XT-Rhythm",
       image: "/HatchbackCars/tiago.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
@@ -36,6 +38,7 @@ const HatchbackCars = () => {
     {
       id: 5,
       name: "Maruti Suzuki Swift VXi ",
+      tabname: "Swift-VXi",
       image: "/HatchbackCars/swift1.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
@@ -55,6 +58,7 @@ const HatchbackCars = () => {
     {
       id: 6,
       name: "Maruti Suzuki Baleno Zeta",
+      tabname: "Baleno-Zeta",
       image: "/HatchbackCars/baleno.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
@@ -74,6 +78,7 @@ const HatchbackCars = () => {
     {
       id: 7,
       name: "Hyundai i20 Asta",
+      tabname: "i20-Asta",
       image: "/HatchbackCars/i20.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
@@ -93,6 +98,7 @@ const HatchbackCars = () => {
     {
       id: 8,
       name: "Hyundai i10 Nios",
+      tabname: "i10-Nios",
       image: "/HatchbackCars/i10.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
@@ -122,10 +128,10 @@ const HatchbackCars = () => {
   }
 
   const HandleClick = (car) => {
-    const selectedMode = priceMode[car.id] || "24h";
+    const selectedMode = priceMode[car.id] || globalPriceMode;
     const selectedPrice = selectedMode === "12h" ? car.price12h : car.price24h;
     console.log("Selected price :", selectedPrice);
-    navigate(`/cars/${car.id}`, {
+    navigate(`/cars/${car.tabname}`, {
       state: {
         ...car,
         selectedMode,
@@ -220,13 +226,40 @@ const HatchbackCars = () => {
           <main className="flex-1 min-w-0">
             {/* Header with Mobile Filter Button */}
             <div className="flex items-center justify-between mb-8">
-              <div>
-                <h1 className="text-white text-3xl sm:text-4xl font-bold mb-2">
-                  Hatchback <span className="text-white">Cars</span>
-                </h1>
-                <span className="text-zinc-400">
-                  Choose from our premium collection
-                </span>
+              <div className="flex items-center gap-6">
+                <div>
+                  <h1 className="text-white text-3xl sm:text-4xl font-bold mb-2">
+                    Hatchback <span className="text-white">Cars</span>
+                  </h1>
+                  <span className="text-zinc-400">
+                    Choose from our premium collection
+                  </span>
+                </div>
+
+                {/* Master Price Mode Toggle */}
+                <div className="hidden sm:flex border border-red-600 rounded-lg overflow-hidden text-sm font-semibold h-fit">
+                  <button
+                    onClick={() => setGlobalPriceMode("12h")}
+                    className={`px-4 py-2 transition-all ${
+                      globalPriceMode === "12h"
+                        ? "bg-red-600 text-white"
+                        : "bg-transparent text-red-600 hover:bg-red-600/10"
+                    }`}
+                  >
+                    12h Pricing
+                  </button>
+
+                  <button
+                    onClick={() => setGlobalPriceMode("24h")}
+                    className={`px-4 py-2 border-l border-red-600 transition-all ${
+                      globalPriceMode === "24h"
+                        ? "bg-red-600 text-white"
+                        : "bg-transparent text-red-600 hover:bg-red-600/10"
+                    }`}
+                  >
+                    24h Pricing
+                  </button>
+                </div>
               </div>
 
               {/* Mobile Filter Toggle */}
@@ -349,7 +382,7 @@ const HatchbackCars = () => {
                                   }))
                                 }
                                 className={`px-3 py-1 ${
-                                  (priceMode[car.id] || "24h") === "12h"
+                                  (priceMode[car.id] || globalPriceMode) === "12h"
                                     ? "bg-black text-white"
                                     : "bg-white text-zinc-600 hover:bg-zinc-100"
                                 }`}
@@ -365,7 +398,7 @@ const HatchbackCars = () => {
                                   }))
                                 }
                                 className={`px-3 py-1 border-l border-zinc-300 ${
-                                  (priceMode[car.id] || "24h") === "24h"
+                                  (priceMode[car.id] || globalPriceMode) === "24h"
                                     ? "bg-black text-white"
                                     : "bg-white text-zinc-600 hover:bg-zinc-100"
                                 }`}
@@ -378,7 +411,7 @@ const HatchbackCars = () => {
                             <div className="flex items-baseline gap-1">
                               <span className="text-black text-2xl font-bold">
                                 ₹
-                                {(priceMode[car.id] || "24h") === "12h"
+                                {(priceMode[car.id] || globalPriceMode) === "12h"
                                   ? car.price12h
                                   : car.price24h}
                               </span>
