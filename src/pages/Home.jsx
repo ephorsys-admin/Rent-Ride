@@ -10,20 +10,18 @@ import Feedback from '../components/homeLanding/Feedback'
 import FAQ from '../components/homeLanding/Faq'
 import Hero from '../components/homeLanding/Hero'
 import { motion } from 'framer-motion'
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 
 const Home = () => {
   return (
     <>
-      <Helmet>
-        <title>Rent Ride Car | Luxury Self-Drive Car
-          Rentals in Bhubaneswar </title>
-        <meta
-          name="description"
-          content="Rent the Bhubaneswar's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
-        />
-        <link rel="canonical" href="https://rentride.com/" />
-      </Helmet>
+      <SEO
+        title="Luxury Self-Drive Car Rentals in Bhubaneswar"
+        description="Book self-drive car rentals in Bhubaneswar with Rent Ride Car. Choose from hatchbacks, sedans, SUVs and bikes with flexible 12h/24h pricing and fast online booking."
+        url="https://rentride.com/"
+        canonical="https://rentride.com/"
+        keywords="car rental bhubaneswar, self drive car rental, rent car bhubaneswar, luxury car rental, hatchback rental, sedan rental, suv rental"
+      />
       <div>
         <motion.div
           initial={{ opacity: 0 }}

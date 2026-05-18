@@ -1,5 +1,5 @@
 import { useLocation, useParams, useNavigate } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 import {
   ArrowLeft,
   Users,
@@ -67,14 +67,26 @@ Please confirm availability and booking details.`;
 
   return (
     <>
-      <Helmet>
-        <title>Car Details | Rent Ride Car</title>
-        <meta
-          name="description"
-          content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
-        />
-        <link rel="canonical" href="https://rentride.com/about" />
-      </Helmet>
+      <SEO
+        title={state?.name ? `${state.name} Rental Details` : "Car Details"}
+        description={
+          state?.name
+            ? `Book ${state.name} in Bhubaneswar with Rent Ride Car. Flexible 12h/24h self-drive rental plans, premium features, and fast online booking.`
+            : "Discover premium self-drive car rental details with Rent Ride Car. Choose the right vehicle and book your ride easily."
+        }
+        url={
+          state?.tabname
+            ? `https://rentride.com/cars/${state.tabname}`
+            : "https://rentride.com/cars"
+        }
+        canonical={
+          state?.tabname
+            ? `https://rentride.com/cars/${state.tabname}`
+            : "https://rentride.com/cars"
+        }
+        image={state?.image}
+        keywords="car rental details bhubaneswar, self drive car rental bhubaneswar, book rental car, premium car rental"
+      />
       <div className="min-h-screen bg-black text-white">
         {/* HEADER */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 mt-20">
