@@ -21,8 +21,8 @@ function Services() {
       <SEO
         title="Services"
         description="Explore Rent Ride Car services in Bhubaneswar, including self-drive car and bike rentals, premium vehicles, and easy online booking with flexible duration options."
-        url="https://rentride.com/services"
-        canonical="https://rentride.com/services"
+        url="https://rentridecar.com/services"
+        canonical="https://rentridecar.com/services"
         keywords="car rental services bhubaneswar, bike rental services bhubaneswar, self drive rental services, car hire services" 
       />
       {/* Hero Section */}

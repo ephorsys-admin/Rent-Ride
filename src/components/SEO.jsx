@@ -6,8 +6,8 @@ const defaultDescription =
   "Rent Ride Car offers the best self-drive car rental service in Bhubaneswar. Choose from hatchbacks, sedans, SUVs and bikes with affordable pricing, easy online booking, and premium customer support.";
 const defaultKeywords =
   "car rental bhubaneswar, self drive car rental, rent car bhubaneswar, luxury car rental, hatchback rental, sedan rental, suv rental, bike rental, online car booking, car hire near me";
-const defaultUrl = "https://rentride.com";
-const defaultImage = "https://rentride.com/favicon.ico";
+const defaultUrl = "https://rentridecar.com";
+const defaultImage = "https://rentridecar.com/favicon.ico";
 
 const SEO = ({
   title,

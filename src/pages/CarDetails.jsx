@@ -76,13 +76,13 @@ Please confirm availability and booking details.`;
         }
         url={
           state?.tabname
-            ? `https://rentride.com/cars/${state.tabname}`
-            : "https://rentride.com/cars"
+            ? `https://rentridecar.com/cars/${state.tabname}`
+            : "https://rentridecar.com/cars"
         }
         canonical={
           state?.tabname
-            ? `https://rentride.com/cars/${state.tabname}`
-            : "https://rentride.com/cars"
+            ? `https://rentridecar.com/cars/${state.tabname}`
+            : "https://rentridecar.com/cars"
         }
         image={state?.image}
         keywords="car rental details bhubaneswar, self drive car rental bhubaneswar, book rental car, premium car rental"

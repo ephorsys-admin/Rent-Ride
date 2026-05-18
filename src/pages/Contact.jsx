@@ -134,8 +134,8 @@ Please confirm availability
       <SEO
         title="Contact Us"
         description="Contact Rent Ride Car to book your self-drive vehicle in Bhubaneswar. Get quick support for hatchback, sedan, SUV and bike rentals."
-        url="https://rentride.com/contact"
-        canonical="https://rentride.com/contact"
+        url="https://rentridecar.com/contact"
+        canonical="https://rentridecar.com/contact"
         keywords="contact rent ride car, car rental support bhubaneswar, book car rental, self drive rental contact"
       />
 

@@ -18,8 +18,8 @@ const Home = () => {
       <SEO
         title="Luxury Self-Drive Car Rentals in Bhubaneswar"
         description="Book self-drive car rentals in Bhubaneswar with Rent Ride Car. Choose from hatchbacks, sedans, SUVs and bikes with flexible 12h/24h pricing and fast online booking."
-        url="https://rentride.com/"
-        canonical="https://rentride.com/"
+        url="https://rentridecar.com/"
+        canonical="https://rentridecar.com/"
         keywords="car rental bhubaneswar, self drive car rental, rent car bhubaneswar, luxury car rental, hatchback rental, sedan rental, suv rental"
       />
       <div>
