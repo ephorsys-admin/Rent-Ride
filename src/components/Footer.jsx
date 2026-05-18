@@ -37,7 +37,7 @@ const Footer = () => {
 
             <h4 className="mt-4 sm:mt-5 text-sm text-white/70 leading-relaxed max-w-xs">
               Experience the ease and confidence of premium car rentals.
-              Drive luxury, comfort, and performance with RENTRIDE.
+              Drive luxury, comfort, and performance with Rent Ride Car.
             </h4>
 
             {/* Contact Details */}
@@ -187,7 +187,7 @@ const Footer = () => {
         {/* Bottom */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 px-6 sm:px-10 py-5 sm:py-6">
           <h4 className="text-xs sm:text-sm text-white/70 text-center md:text-left">
-            © {new Date().getFullYear()} RENTRIDE. All rights reserved.
+            © {new Date().getFullYear()} Rent Ride Car. All rights reserved.
           </h4>
 
           {/* Social Icons */}

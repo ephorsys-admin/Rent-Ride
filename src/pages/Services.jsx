@@ -19,7 +19,7 @@ function Services() {
   return (
     <>
       <Helmet>
-        <title>Services | Rent Ride</title>
+        <title>Services | Rent Ride Car</title>
         <meta
           name="description"
           content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."

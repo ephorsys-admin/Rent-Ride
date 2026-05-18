@@ -20,6 +20,7 @@ const cars = [
   {
     id: 9,
     name: "Mahindra XUV 500",
+    tabname: "Mahindra-XUV-500",
     image: "/SUVCars/XUV.webp",
     seater: "7 Seater Car",
     transmission: "Manual",
@@ -31,6 +32,7 @@ const cars = [
   {
     id: 10,
     name: "Mahindra Thar",
+
     image: "/SUVCars/thar.webp",
     seater: "4 Seater Car",
     transmission: "Manual (RWD)",
@@ -42,6 +44,7 @@ const cars = [
   {
     id: 11,
     name: "Mahindra Scorpio N",
+    tabname: "Mahindra-Scorpio-N",
     image: "/SUVCars/N.webp",
     seater: "7 Seater Car",
     transmission: "Manual",
@@ -54,6 +57,7 @@ const cars = [
   {
     id: 12,
     name: "Maruti Suzuki Brezza (compact suv)",
+      tabname: "Maruti-Suzuki-Brezza",
     image: "/SUVCars/brezza.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
@@ -65,6 +69,7 @@ const cars = [
   {
     id: 13,
     name: "Hyundai Venue (compact suv)",
+    tabname: "Hyundai-Venue",
     image: "/SUVCars/venue.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
@@ -76,6 +81,7 @@ const cars = [
   {
     id: 13,
     name: "Maruti suzuki fronx",
+    tabname: "Maruti-Suzuki-Fronx",
     image: "/SUVCars/fronx.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
@@ -100,7 +106,7 @@ const cars = [
     const selectedMode = priceMode[car.id] || "24h";
     const selectedPrice = selectedMode === "12h" ? car.price12h : car.price24h;
     console.log("Selected price :", selectedPrice);
-    navigate(`/cars/${car.id}`, {
+    navigate(`/cars/${car.tabname}`, {
       state: {
         ...car,
         selectedMode,

@@ -13,13 +13,14 @@ import { useState } from "react";
 
 const CarDetails = () => {
   const [heroLoaded, setHeroLoaded] = useState(false);
+  const [priceMode, setPriceMode] = useState(null);
 
   const { state } = useLocation();
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const priceToShow = state?.selectedPrice || state?.price24h;
-  const mode = state?.selectedMode || "24h";
+  const mode = priceMode || state?.selectedMode || "24h";
+  const priceToShow = mode === "12h" ? state?.price12h : state?.price24h;
 
   // WhatsApp booking handler
   const handleBookNow = () => {
@@ -67,7 +68,7 @@ Please confirm availability and booking details.`;
   return (
     <>
       <Helmet>
-        <title>Car Details | Rent Ride</title>
+        <title>Car Details | Rent Ride Car</title>
         <meta
           name="description"
           content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
@@ -178,7 +179,34 @@ Please confirm availability and booking details.`;
 
               {/* PRICE CARD */}
               <div className="bg-zinc-900 rounded-2xl p-5 border border-zinc-800">
-                <span className="text-white/70 text-sm">Rental Price</span>
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-white/70 text-sm">Rental Price</span>
+                  
+                  {/* Toggle Button */}
+                  <div className="flex border border-red-600 rounded-lg overflow-hidden text-xs font-semibold">
+                    <button
+                      onClick={() => setPriceMode("12h")}
+                      className={`px-3 py-1 transition-all ${
+                        (priceMode || state?.selectedMode || "24h") === "12h"
+                          ? "bg-red-600 text-white"
+                          : "bg-transparent text-red-600 hover:bg-red-600/10"
+                      }`}
+                    >
+                      12h
+                    </button>
+                    <button
+                      onClick={() => setPriceMode("24h")}
+                      className={`px-3 py-1 border-l border-red-600 transition-all ${
+                        (priceMode || state?.selectedMode || "24h") === "24h"
+                          ? "bg-red-600 text-white"
+                          : "bg-transparent text-red-600 hover:bg-red-600/10"
+                      }`}
+                    >
+                      24h
+                    </button>
+                  </div>
+                </div>
+
                 <h2 className="text-3xl sm:text-4xl font-bold mt-2">
                   ₹{priceToShow}
                   <span className="text-white/60 text-lg"> / {mode}</span>
