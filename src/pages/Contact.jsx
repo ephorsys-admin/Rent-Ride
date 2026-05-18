@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 import {
   Phone,
   Mail,
@@ -131,14 +131,13 @@ Please confirm availability
 
   return (
     <>
-      <Helmet>
-        <title>Contact Us | Rent Ride Car</title>
-        <meta
-          name="description"
-          content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
-        />
-        <link rel="canonical" href="https://rentride.com/contact" />
-      </Helmet>
+      <SEO
+        title="Contact Us"
+        description="Contact Rent Ride Car to book your self-drive vehicle in Bhubaneswar. Get quick support for hatchback, sedan, SUV and bike rentals."
+        url="https://rentride.com/contact"
+        canonical="https://rentride.com/contact"
+        keywords="contact rent ride car, car rental support bhubaneswar, book car rental, self drive rental contact"
+      />
 
       <Bghero
         imgSrc="/SedanCars/car.webp"

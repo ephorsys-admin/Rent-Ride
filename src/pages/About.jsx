@@ -4,19 +4,18 @@ import Feedback from "../components/homeLanding/Feedback";
 import CarRentalAbout from "../components/homeLanding/homeAbout";
 import Bghero from "../helpers/BgHero";
 
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 
 export default function About() {
   return (
     <>
-      <Helmet>
-        <title>About Us | Rent Ride Car</title>
-        <meta
-          name="description"
-          content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
-        />
-        <link rel="canonical" href="https://rentride.com/about" />
-      </Helmet>
+      <SEO
+        title="About Us"
+        description="Learn about Rent Ride Car, Bhubaneswar's trusted self-drive rental service. We provide safe, well-maintained vehicles, transparent pricing, and 24/7 customer support."
+        url="https://rentride.com/about"
+        canonical="https://rentride.com/about"
+        keywords="about rent ride car, car rental company bhubaneswar, self drive rental services, car rental safety" 
+      />
       <div className="scroll-smooth">
         <Bghero
           imgSrc="/Aboutpage/aboutmain.webp"
