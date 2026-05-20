@@ -21,8 +21,9 @@ const Home = () => {
         url="https://rentridecar.com/"
         canonical="https://rentridecar.com/"
         keywords="car rental bhubaneswar, self drive car rental, rent car bhubaneswar, luxury car rental, hatchback rental, sedan rental, suv rental"
+        schemaType="homepage"
       />
-      <div>
+      <main>
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -31,17 +32,42 @@ const Home = () => {
           <Hero />
         </motion.div>
 
+        {/* Fleet Section */}
+        <section aria-labelledby="fleet-heading">
+          <CarsTypes />
+          <div className="sr-only">
+            <h2 id="fleet-heading">Our Fleet - Self Drive Car Rental Fleet in Bhubaneswar</h2>
+            <p>Choose from our wide range of vehicles including sedans, SUVs, sports cars, and premium vehicles for self-drive rental in Bhubaneswar.</p>
+          </div>
+        </section>
+
         <HomeAbout />
         <CarSliding />
-        <CarsTypes />
+        
+        {/* Featured Vehicles Section */}
+        <section aria-labelledby="vehicles-heading">
+          <div className="sr-only">
+            <h2 id="vehicles-heading">Featured Rental Vehicles</h2>
+            <p>Browse our latest and most popular self-drive rental vehicles available in Bhubaneswar.</p>
+          </div>
+        </section>
+        
         <Features />
         <TrustedBrands />
         <VideoSection />
 
+        {/* Service Overview Section */}
+        <section aria-labelledby="service-heading">
+          <div className="sr-only">
+            <h2 id="service-heading">How Our Self-Drive Car Rental Service Works</h2>
+            <p>Simple and transparent car rental process in Bhubaneswar. Book online, pick up your car, and enjoy the freedom of self-drive.</p>
+          </div>
+        </section>
+        
         <HowItWorks />
         <Feedback />
         <FAQ />
-      </div>
+      </main>
     </>
   )
 }

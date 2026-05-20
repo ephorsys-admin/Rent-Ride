@@ -1,8 +1,0 @@
-User-agent: *
-Disallow:
-
-# Point crawlers to the sitemap
-Sitemap: https://rentridecar.com/sitemap.xml
-
-# Optional: polite crawl delay for some crawlers
-# Crawl-delay: 10

@@ -7,7 +7,7 @@ const defaultDescription =
 const defaultKeywords =
   "car rental bhubaneswar, self drive car rental, rent car bhubaneswar, luxury car rental, hatchback rental, sedan rental, suv rental, bike rental, online car booking, car hire near me";
 const defaultUrl = "https://rentridecar.com";
-const defaultImage = "https://rentridecar.com/favicon.ico";
+const defaultImage = "https://rentridecar.com/og-image.jpg";
 
 const SEO = ({
   title,
@@ -17,6 +17,7 @@ const SEO = ({
   image,
   canonical,
   children,
+  schemaType = "homepage",
 }) => {
   const seoTitle = title ? `${title} | Rent Ride Car` : defaultTitle;
   const seoDescription = description || defaultDescription;
@@ -25,20 +26,32 @@ const SEO = ({
   const seoKeywords = keywords || defaultKeywords;
   const canonicalUrl = canonical || seoUrl;
 
-  const jsonLd = {
+  const businessSchema = {
     "@context": "https://schema.org",
-    "@type": "CarRental",
+    "@type": ["LocalBusiness", "AutoRental"],
+    "@id": "https://rentridecar.com/#business",
     name: "Rent Ride Car",
-    url: seoUrl,
-    telephone: "+919658041110",
-    description: seoDescription,
+    url: "https://rentridecar.com",
+    logo: "https://rentridecar.com/brand.webp",
+    image: seoImage,
+    description:
+      "Professional self-drive car rentals in Bhubaneswar. Hatchbacks, sedans, SUVs and premium vehicles with transparent pricing and 24/7 support.",
+    telephone: "+91-9658041110",
+    email: "info@rentridecar.com",
+    priceRange: "₹₹",
     address: {
       "@type": "PostalAddress",
+      streetAddress: "Bhubaneswar",
       addressLocality: "Bhubaneswar",
       addressRegion: "Odisha",
+      postalCode: "751024",
       addressCountry: "IN",
     },
-    priceRange: "₹1399 - ₹2399",
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: "20.2961",
+      longitude: "85.8245",
+    },
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -51,11 +64,42 @@ const SEO = ({
           "Saturday",
           "Sunday",
         ],
-        opens: "00:00",
-        closes: "23:59",
+        opens: "08:00",
+        closes: "20:00",
       },
     ],
+    areaServed: [
+      { "@type": "City", name: "Bhubaneswar" },
+      { "@type": "Place", name: "Bhubaneswar Airport" },
+      { "@type": "Place", name: "KIIT University" },
+      { "@type": "Place", name: "Patia" },
+    ],
+    sameAs: [
+      "https://www.facebook.com/rentridecar",
+      "https://www.instagram.com/rentridecar",
+    ],
   };
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://rentridecar.com/#website",
+    url: "https://rentridecar.com",
+    name: "Rent Ride Car",
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://rentridecar.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string",
+    },
+  };
+
+  const graphSchema = {
+    "@context": "https://schema.org",
+    "@graph": [businessSchema, websiteSchema],
+  };
+
+  const pageSchema =
+    schemaType === "homepage" ? graphSchema : businessSchema;
 
   return (
     <Helmet>
@@ -78,7 +122,9 @@ const SEO = ({
       <meta name="twitter:description" content={seoDescription} />
       <meta name="twitter:image" content={seoImage} />
 
-      <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+      <script type="application/ld+json">
+        {JSON.stringify(pageSchema)}
+      </script>
       {children}
     </Helmet>
   );

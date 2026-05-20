@@ -110,21 +110,34 @@ const FAQ = () => {
           </h2>
 
           {/* FAQ ITEMS */}
-          <div className="space-y-4 text-left md:px-6">
+          <div
+            className="space-y-4 text-left md:px-6"
+            itemScope
+            itemType="https://schema.org/FAQPage"
+          >
             {faqs.map((faq, index) => (
-              <div key={index} className="border-b border-gray-800 pb-4">
+              <div
+                key={index}
+                className="border-b border-gray-800 pb-4"
+                itemScope
+                itemProp="mainEntity"
+                itemType="https://schema.org/Question"
+              >
                 <button
                   onClick={() => toggleFAQ(index)}
                   className="w-full flex justify-between items-center text-left group"
                 >
-                  <span className="
-                    text-white
-                    font-medium
-                    text-sm sm:text-base
-                    pr-4
-                    transition-colors
-                    group-hover:text-[#FF0000]
-                  ">
+                  <span
+                    className="
+                      text-white
+                      font-medium
+                      text-sm sm:text-base
+                      pr-4
+                      transition-colors
+                      group-hover:text-[#FF0000]
+                    "
+                    itemProp="name"
+                  >
                     {faq.question}
                   </span>
                   <ChevronDown
@@ -141,8 +154,14 @@ const FAQ = () => {
                       ? "max-h-40 mt-3 opacity-100"
                       : "max-h-0 opacity-0"
                   }`}
+                  itemScope
+                  itemProp="acceptedAnswer"
+                  itemType="https://schema.org/Answer"
                 >
-                  <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
+                  <p
+                    className="text-white/70 text-xs sm:text-sm leading-relaxed"
+                    itemProp="text"
+                  >
                     {faq.answer}
                   </p>
                 </div>
