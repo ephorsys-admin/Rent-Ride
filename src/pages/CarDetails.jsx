@@ -11,6 +11,265 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 
+const carDetailsBySlug = {
+  "Swift-Dzire": {
+    name: "Maruti Suzuki Swift Dzire",
+    tabname: "Swift-Dzire",
+    image: "/SedanCars/dzire.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1499,
+    price24h: 1899,
+    category: "sedan",
+    features: [
+      "AC",
+      "Touchscreen Infotainment",
+      "Bluetooth",
+      "USB Charging",
+      "Rear Camera",
+      "Dual Airbags",
+      "ABS",
+    ],
+  },
+  "Ciaz-Delta": {
+    name: "Maruti Suzuki Ciaz Delta",
+    tabname: "Ciaz-Delta",
+    image: "/SedanCars/ciaz.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1799,
+    price24h: 2399,
+    category: "sedan",
+    features: [
+      "AC",
+      "Touchscreen Infotainment",
+      "Bluetooth",
+      "USB Charging",
+      "Rear Camera",
+      "Dual Airbags",
+      "ABS",
+    ],
+  },
+  "Tata-Nexon": {
+    name: "Tata Nexon",
+    tabname: "Tata-Nexon",
+    image: "/SedanCars/Nexon.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1899,
+    price24h: 2399,
+    category: "sedan",
+    features: ["5 Star Safety", "Sunroof", "JBL Speakers", "360 Camera"],
+  },
+  "Hyundai-Exter": {
+    name: "Hyundai Exter",
+    tabname: "Hyundai-Exter",
+    image: "/SedanCars/exter.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1899,
+    price24h: 2399,
+    category: "sedan",
+    features: ["5 Star Safety", "Sunroof", "JBL Speakers", "360 Camera"],
+  },
+  "Carens-Clavis": {
+    name: "Kia Carens Clavis",
+    tabname: "Carens-Clavis",
+    image: "/SedanCars/clavis.webp",
+    seater: "7 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 2499,
+    price24h: 2999,
+    category: "sedan",
+    features: ["5 Star Safety", "Sunroof", "JBL Speakers", "360 Camera"],
+  },
+  "Tiago-XT-Rhythm": {
+    name: "Tata Tiago XT Rhythm",
+    tabname: "Tiago-XT-Rhythm",
+    image: "/HatchbackCars/tiago.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1399,
+    price24h: 1799,
+    category: "Hatchback",
+    features: [
+      "AC",
+      "Power Steering",
+      "Harman Music System",
+      "Bluetooth",
+      "USB Charging",
+      "Dual Airbags",
+      "ABS",
+    ],
+  },
+  "Swift-VXi": {
+    name: "Maruti Suzuki Swift VXi ",
+    tabname: "Swift-VXi",
+    image: "/HatchbackCars/swift1.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1499,
+    price24h: 1899,
+    category: "Hatchback",
+    features: [
+      "AC",
+      "Touchscreen Infotainment",
+      "Bluetooth",
+      "USB Charging",
+      "Power Windows",
+      "Dual Airbags",
+      "ABS",
+    ],
+  },
+  "Baleno-Zeta": {
+    name: "Maruti Suzuki Baleno Zeta",
+    tabname: "Baleno-Zeta",
+    image: "/HatchbackCars/baleno.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1499,
+    price24h: 1899,
+    category: "Hatchback",
+    features: [
+      "AC",
+      "Touchscreen Infotainment",
+      "Android Auto / Apple CarPlay",
+      "Bluetooth",
+      "Rear Camera",
+      "Dual Airbags",
+      "ABS",
+    ],
+  },
+  "i20-Asta": {
+    name: "Hyundai i20 Asta",
+    tabname: "i20-Asta",
+    image: "/HatchbackCars/i20.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1499,
+    price24h: 1899,
+    category: "Hatchback",
+    features: [
+      "AC",
+      "Touchscreen Infotainment",
+      "Bluetooth",
+      "USB Charging",
+      "Rear Parking Sensors",
+      "Dual Airbags",
+      "ABS",
+    ],
+  },
+  "i10-Nios": {
+    name: "Hyundai i10 Nios",
+    tabname: "i10-Nios",
+    image: "/HatchbackCars/i10.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1499,
+    price24h: 1899,
+    category: "Hatchback",
+    features: [
+      "AC",
+      "10.25-inch Touchscreen",
+      "Bluetooth",
+      "Wireless Charger",
+      "Rear Camera",
+      "Dual Airbags",
+      "ABS",
+    ],
+  },
+  "Mahindra-XUV-500": {
+    name: "Mahindra XUV 500",
+    tabname: "Mahindra-XUV-500",
+    image: "/SUVCars/XUV.webp",
+    seater: "7 Seater Car",
+    transmission: "Manual",
+    fuel: "Diesel",
+    price12h: 2999,
+    price24h: 3599,
+    category: "suv",
+    features: ["AWD", "Sunroof", "Leather Seats", "Navigation System"],
+  },
+  "Mahindra-Thar": {
+    name: "Mahindra Thar",
+    tabname: "Mahindra-Thar",
+    image: "/SUVCars/thar.webp",
+    seater: "4 Seater Car",
+    transmission: "Manual (RWD)",
+    fuel: "Petrol",
+    price12h: 3199,
+    price24h: 3599,
+    category: "suv",
+    features: ["4x4 Mode", "Off-road Tyres", "Removable Roof", "Hill Assist"],
+  },
+  "Mahindra-Scorpio-N": {
+    name: "Mahindra Scorpio N",
+    tabname: "Mahindra-Scorpio-N",
+    image: "/SUVCars/N.webp",
+    seater: "7 Seater Car",
+    transmission: "Manual",
+    fuel: "Diesel",
+    price12h: 3499,
+    price24h: 3999,
+    category: "suv",
+    features: ["4WD", "Sunroof", "Advanced Driver Assist", "Power Steering"],
+  },
+  "Maruti-Suzuki-Brezza": {
+    name: "Maruti Suzuki Brezza (compact suv)",
+    tabname: "Maruti-Suzuki-Brezza",
+    image: "/SUVCars/brezza.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1899,
+    price24h: 2399,
+    category: "suv",
+    features: ["Touchscreen", "ABS", "Airbags", "Rear Camera", "Cruise Control"],
+  },
+  "Hyundai-Venue": {
+    name: "Hyundai Venue (compact suv)",
+    tabname: "Hyundai-Venue",
+    image: "/SUVCars/venue.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1899,
+    price24h: 2399,
+    category: "suv",
+    features: ["Sunroof", "Wireless Android Auto", "Airbags", "Parking Sensors"],
+  },
+  "Maruti-Suzuki-Fronx": {
+    name: "Maruti suzuki fronx",
+    tabname: "Maruti-Suzuki-Fronx",
+    image: "/SUVCars/fronx.webp",
+    seater: "5 Seater Car",
+    transmission: "Manual",
+    fuel: "Petrol",
+    price12h: 1799,
+    price24h: 2399,
+    category: "suv",
+    features: ["Sunroof", "Wireless Android Auto", "Airbags", "Parking Sensors"],
+  },
+};
+
+const findCarBySlug = (slug) => {
+  const normalizedSlug = decodeURIComponent(slug || "").toLowerCase();
+
+  return Object.values(carDetailsBySlug).find(
+    (car) => car.tabname.toLowerCase() === normalizedSlug,
+  );
+};
+
 const CarDetails = () => {
   const [heroLoaded, setHeroLoaded] = useState(false);
   const [priceMode, setPriceMode] = useState(null);
@@ -18,9 +277,10 @@ const CarDetails = () => {
   const { state } = useLocation();
   const { id } = useParams();
   const navigate = useNavigate();
+  const car = state || findCarBySlug(id);
 
-  const mode = priceMode || state?.selectedMode || "24h";
-  const priceToShow = mode === "12h" ? state?.price12h : state?.price24h;
+  const mode = priceMode || car?.selectedMode || "24h";
+  const priceToShow = mode === "12h" ? car?.price12h : car?.price24h;
 
   // WhatsApp booking handler
   const handleBookNow = () => {
@@ -30,14 +290,14 @@ const CarDetails = () => {
     const message = `Hi, I would like to book the following car:
 
 *Car Details:*
-- Model: ${state.name}
-- Transmission: ${state.transmission}
-- Fuel Type: ${state.fuel}
-- Seating Capacity: ${state.seater}
+- Model: ${car.name}
+- Transmission: ${car.transmission}
+- Fuel Type: ${car.fuel}
+- Seating Capacity: ${car.seater}
 - Rental Price: ₹${priceToShow} / ${mode}
 
 *Features:*
-${state.features?.map((feature) => `- ${feature}`).join("\n")}
+${car.features?.map((feature) => `- ${feature}`).join("\n")}
 
 Please confirm availability and booking details.`;
 
@@ -51,7 +311,7 @@ Please confirm availability and booking details.`;
     window.open(whatsappURL, "_blank");
   };
 
-  if (!state) {
+  if (!car) {
     return (
       <div className="min-h-screen bg-black text-white flex flex-col items-center justify-center">
         <h1 className="text-3xl font-bold mb-4">Car not found</h1>
@@ -68,23 +328,23 @@ Please confirm availability and booking details.`;
   return (
     <>
       <SEO
-        title={state?.name ? `${state.name} Rental Details` : "Car Details"}
+        title={car?.name ? `${car.name} Rental Details` : "Car Details"}
         description={
-          state?.name
-            ? `Book ${state.name} in Bhubaneswar with Rent Ride Car. Flexible 12h/24h self-drive rental plans, premium features, and fast online booking.`
+          car?.name
+            ? `Book ${car.name} in Bhubaneswar with Rent Ride Car. Flexible 12h/24h self-drive rental plans, premium features, and fast online booking.`
             : "Discover premium self-drive car rental details with Rent Ride Car. Choose the right vehicle and book your ride easily."
         }
         url={
-          state?.tabname
-            ? `https://rentridecar.com/cars/${state.tabname}`
+          car?.tabname
+            ? `https://rentridecar.com/cars/${car.tabname}`
             : "https://rentridecar.com/cars"
         }
         canonical={
-          state?.tabname
-            ? `https://rentridecar.com/cars/${state.tabname}`
+          car?.tabname
+            ? `https://rentridecar.com/cars/${car.tabname}`
             : "https://rentridecar.com/cars"
         }
-        image={state?.image}
+        image={car?.image}
         keywords="car rental details bhubaneswar, self drive car rental bhubaneswar, book rental car, premium car rental"
       />
       <div className="min-h-screen bg-black text-white">
@@ -93,7 +353,7 @@ Please confirm availability and booking details.`;
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-2">
             <button
               onClick={() => {
-                const category = state?.category || "sedan";
+                const category = car?.category || "sedan";
                 navigate("/cars", { state: { activeTab: category } });
               }}
               className="flex items-center gap-2 text-white/70 hover:text-red-500 transition"
@@ -119,8 +379,8 @@ Please confirm availability and booking details.`;
                 <img
                   loading="eager"
                   fetchpriority="high"
-                  src={state.image}
-                  alt={state.name}
+                  src={car.image}
+                  alt={car.name}
                   onLoad={() => setHeroLoaded(true)}
                   className="w-full h-full object-cover"
                   style={{
@@ -132,7 +392,7 @@ Please confirm availability and booking details.`;
 
                 <div className="absolute top-3 left-3 z-20">
                   <span className="px-3 py-1 bg-white text-black text-xs font-semibold rounded-full">
-                    {state.seater}
+                    {car.seater}
                   </span>
                 </div>
               </div>
@@ -142,11 +402,11 @@ Please confirm availability and booking details.`;
                 {[
                   {
                     label: "Transmission",
-                    value: state.transmission,
+                    value: car.transmission,
                     icon: <Settings />,
                   },
-                  { label: "Fuel Type", value: state.fuel, icon: <Fuel /> },
-                  { label: "Capacity", value: state.seater, icon: <Users /> },
+                  { label: "Fuel Type", value: car.fuel, icon: <Fuel /> },
+                  { label: "Capacity", value: car.seater, icon: <Users /> },
                   { label: "Available", value: "Now", icon: <Calendar /> },
                 ].map((item, i) => (
                   <div
@@ -170,7 +430,7 @@ Please confirm availability and booking details.`;
               {/* TITLE */}
               <div>
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2">
-                  {state.name}
+                  {car.name}
                 </h1>
 
                 <div className="flex items-center gap-2">
@@ -199,7 +459,7 @@ Please confirm availability and booking details.`;
                     <button
                       onClick={() => setPriceMode("12h")}
                       className={`px-3 py-1 transition-all ${
-                        (priceMode || state?.selectedMode || "24h") === "12h"
+                        (priceMode || car?.selectedMode || "24h") === "12h"
                           ? "bg-red-600 text-white"
                           : "bg-transparent text-red-600 hover:bg-red-600/10"
                       }`}
@@ -209,7 +469,7 @@ Please confirm availability and booking details.`;
                     <button
                       onClick={() => setPriceMode("24h")}
                       className={`px-3 py-1 border-l border-red-600 transition-all ${
-                        (priceMode || state?.selectedMode || "24h") === "24h"
+                        (priceMode || car?.selectedMode || "24h") === "24h"
                           ? "bg-red-600 text-white"
                           : "bg-transparent text-red-600 hover:bg-red-600/10"
                       }`}
@@ -246,7 +506,7 @@ Please confirm availability and booking details.`;
                 <h3 className="font-bold text-lg mb-4">Features Included</h3>
 
                 <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-sm text-zinc-300">
-                  {state.features?.map((feature, i) => (
+                  {car.features?.map((feature, i) => (
                     <li
                       key={i}
                       className="flex items-center gap-2 bg-zinc-900 px-3 py-2 rounded-lg"

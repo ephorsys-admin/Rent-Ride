@@ -32,6 +32,7 @@ const cars = [
   {
     id: 10,
     name: "Mahindra Thar",
+    tabname: "Mahindra-Thar",
 
     image: "/SUVCars/thar.webp",
     seater: "4 Seater Car",
