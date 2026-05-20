@@ -17,7 +17,7 @@ const SedanCars = () => {
     {
       id: 1,
       name: "Maruti Suzuki Swift Dzire",
-      tbnaem: "Swift-Dzire",
+      tabname: "Swift-Dzire",
       image: "/SedanCars/dzire.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
@@ -37,7 +37,7 @@ const SedanCars = () => {
     {
       id: 2,
       name: "Maruti Suzuki Ciaz Delta",
-      tbnaem: "Ciaz-Delta",
+      tabname: "Ciaz-Delta",
       image: "/SedanCars/ciaz.webp",
       seater: "5 Seater Car",
       transmission: "Manual",
@@ -57,7 +57,7 @@ const SedanCars = () => {
       {
     id: 3,
     name: "Tata Nexon",
-    tbnaem: "Tata-Nexon",
+    tabname: "Tata-Nexon",
     image: "/SedanCars/Nexon.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
@@ -69,7 +69,7 @@ const SedanCars = () => {
       {
     id: 4,
     name: "Hyundai Exter",
-    tbnaem: "Hyundai-Exter",
+    tabname: "Hyundai-Exter",
     image: "/SedanCars/exter.webp",
     seater: "5 Seater Car",
     transmission: "Manual",
@@ -82,7 +82,7 @@ const SedanCars = () => {
       {
     id: 5,
     name: "Kia Carens Clavis",
-    tbnaem: "Carens-Clavis",
+    tabname: "Carens-Clavis",
     image: "/SedanCars/clavis.webp",
     seater: "7 Seater Car",
     transmission: "Manual",
@@ -106,7 +106,7 @@ const SedanCars = () => {
     const selectedMode = priceMode[car.id] || "24h";
     const selectedPrice = selectedMode === "12h" ? car.price12h : car.price24h;
     console.log("Selected price :", selectedPrice);
-    navigate(`/cars/${car.tbnaem}`, {
+    navigate(`/cars/${car.tabname}`, {
       state: {
         ...car,
         selectedMode,

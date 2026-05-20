@@ -51,7 +51,7 @@ const navigate = useNavigate();
             }}
           >
             <span className="inline-flex items-center gap-2 px-2 py-1 text-xs  rounded-full border border-red-500/10 bg-black-500/10 backdrop-blur text-white">
-              <span className="text-[#ff0000]">•</span>Rent Ride Car Car - Best Car Rental Service in Bhubaneswar
+              <span className="text-[#ff0000]">•</span>Rent Ride Car - Best Self Drive Car Rental Service in Bhubaneswar
             </span>
           </div>
 
@@ -91,7 +91,7 @@ const navigate = useNavigate();
     break-words
   "
           >
-            {"Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
+            {"Rent the Bhubaneswar's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
               .split("")
               .map((char, i) => (
              <span
