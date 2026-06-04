@@ -295,11 +295,10 @@ Please confirm availability
                         onClick={() =>
                           setFormData({ ...formData, rentalDuration: time })
                         }
-                        className={`px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-full border transition ${
-                          formData.rentalDuration === time
+                        className={`px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-full border transition ${formData.rentalDuration === time
                             ? "bg-[#ff0000] border-[#ff0000] text-white"
                             : "border-gray-600 text-gray-300 hover:border-[#ff0000]"
-                        }`}
+                          }`}
                       >
                         {time}
                       </button>
@@ -335,14 +334,13 @@ Please confirm availability
                     !formData.selectedCar ||
                     !formData.rentalDuration
                   }
-                  className={`w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full font-semibold transition ${
-                    formData.fullname &&
-                    formData.phone &&
-                    formData.selectedCar &&
-                    formData.rentalDuration
+                  className={`w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full font-semibold transition ${formData.fullname &&
+                      formData.phone &&
+                      formData.selectedCar &&
+                      formData.rentalDuration
                       ? "bg-[#ff0000] text-white hover:bg-[#cc0000]"
                       : "bg-gray-600 text-gray-300 cursor-not-allowed"
-                  }`}
+                    }`}
                 >
                   Book Now
                 </button>
