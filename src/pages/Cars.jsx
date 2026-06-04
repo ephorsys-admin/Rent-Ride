@@ -2,18 +2,17 @@ import React from "react";
 import Bghero from "../helpers/BgHero";
 import about from "../assets/about.avif";
 import CarServices from "../components/Car/CarServices";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 function Cars() {
   return (
     <>
-      <Helmet>
-        <title>Cars | Rent Ride Car</title>
-        <meta
-          name="description"
-          content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
-        />
-        <link rel="canonical" href="https://rentride.com/cars" />
-      </Helmet>
+      <SEO
+        title="Cars"
+        description="Find the best self-drive cars in Bhubaneswar with Rent Ride Car. Choose premium hatchbacks, sedans, and SUVs with easy online booking and transparent pricing."
+        url="https://rentridecar.com/cars"
+        canonical="https://rentridecar.com/cars"
+        keywords="car rental bhubaneswar, sedan rental bhubaneswar, suv rental bhubaneswar, hatchback rental bhubaneswar, car hire" 
+      />
       <Bghero
         imgSrc="/SedanCars/car.webp"
         imgAlt={"Sedan Car"}

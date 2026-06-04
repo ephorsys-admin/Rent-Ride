@@ -6,7 +6,7 @@ import FeaturesSection from "../components/Services/FeatureServices";
 import OurService from "../components/Services/Ourservice";
 import BgHero from "../helpers/BgHero";
 import TypingText from "../shared/helpers/TypingText";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 
 const MemoTypingText = memo(TypingText);
 function Services() {
@@ -18,14 +18,13 @@ function Services() {
   }, []);
   return (
     <>
-      <Helmet>
-        <title>Services | Rent Ride Car</title>
-        <meta
-          name="description"
-          content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
-        />
-        <link rel="canonical" href="https://rentride.com/about" />
-      </Helmet>
+      <SEO
+        title="Services"
+        description="Explore Rent Ride Car services in Bhubaneswar, including self-drive car and bike rentals, premium vehicles, and easy online booking with flexible duration options."
+        url="https://rentridecar.com/services"
+        canonical="https://rentridecar.com/services"
+        keywords="car rental services bhubaneswar, bike rental services bhubaneswar, self drive rental services, car hire services" 
+      />
       {/* Hero Section */}
       <BgHero
         imgSrc="/Services/lambo.webp"

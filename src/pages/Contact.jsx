@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 import {
   Phone,
   Mail,
@@ -131,14 +131,13 @@ Please confirm availability
 
   return (
     <>
-      <Helmet>
-        <title>Contact Us | Rent Ride Car</title>
-        <meta
-          name="description"
-          content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
-        />
-        <link rel="canonical" href="https://rentride.com/contact" />
-      </Helmet>
+      <SEO
+        title="Contact Us"
+        description="Contact Rent Ride Car to book your self-drive vehicle in Bhubaneswar. Get quick support for hatchback, sedan, SUV and bike rentals."
+        url="https://rentridecar.com/contact"
+        canonical="https://rentridecar.com/contact"
+        keywords="contact rent ride car, car rental support bhubaneswar, book car rental, self drive rental contact"
+      />
 
       <Bghero
         imgSrc="/SedanCars/car.webp"
@@ -296,11 +295,10 @@ Please confirm availability
                         onClick={() =>
                           setFormData({ ...formData, rentalDuration: time })
                         }
-                        className={`px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-full border transition ${
-                          formData.rentalDuration === time
+                        className={`px-4 py-2 sm:py-2.5 text-sm sm:text-base rounded-full border transition ${formData.rentalDuration === time
                             ? "bg-[#ff0000] border-[#ff0000] text-white"
                             : "border-gray-600 text-gray-300 hover:border-[#ff0000]"
-                        }`}
+                          }`}
                       >
                         {time}
                       </button>
@@ -336,14 +334,13 @@ Please confirm availability
                     !formData.selectedCar ||
                     !formData.rentalDuration
                   }
-                  className={`w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full font-semibold transition ${
-                    formData.fullname &&
-                    formData.phone &&
-                    formData.selectedCar &&
-                    formData.rentalDuration
+                  className={`w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base rounded-full font-semibold transition ${formData.fullname &&
+                      formData.phone &&
+                      formData.selectedCar &&
+                      formData.rentalDuration
                       ? "bg-[#ff0000] text-white hover:bg-[#cc0000]"
                       : "bg-gray-600 text-gray-300 cursor-not-allowed"
-                  }`}
+                    }`}
                 >
                   Book Now
                 </button>

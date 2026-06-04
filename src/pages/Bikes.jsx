@@ -3,20 +3,19 @@ import Upcoming from "../helpers/Upcoming";
 import BikeSevice from "../components/BIke/BIkeSevice";
 import BgHero from "../helpers/BgHero";
 import about from "../assets/about.avif";
-import { Helmet } from "react-helmet-async";
+import SEO from "../components/SEO";
 
 
 const Bikes = () => {
   return (
     <>
-      <Helmet>
-        <title>Bikes | Rent Ride Car</title>
-        <meta
-          name="description"
-          content="Rent the world's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
-        />
-        <link rel="canonical" href="https://rentride.com/about" />
-      </Helmet>
+      <SEO
+        title="Bikes"
+        description="Rent premium bikes in Bhubaneswar with Rent Ride Car. Enjoy convenient self-drive bike rental, affordable rates, and reliable service for short and long trips."
+        url="https://rentridecar.com/bikes"
+        canonical="https://rentridecar.com/bikes"
+        keywords="bike rental bhubaneswar, self drive bike rental, bike hire bhubaneswar, bike rental service" 
+      />
       <BgHero
         imgSrc="/Bikes/bike-1.webp"
         imgAlt={""}
