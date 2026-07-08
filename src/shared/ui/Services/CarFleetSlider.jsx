@@ -46,8 +46,65 @@ const cars = [
     category: "car",
   },
 
+
   {
     id: 5,
+    name: "Fronx (Red)",
+    type: "Petrol",
+    seater: 5,
+    price12h: 1599,
+    price24h: 1999,
+    image: "/SUVCars/1.webp",
+    category: "car",
+  },
+
+
+    {
+    id: 6,
+    name: "Baleno (White/Blue)",
+    type: "Petrol",
+    seater: 5,
+    price12h: 1499,
+    price24h: 1799,
+    image: "/HatchbackCars/baleno.webp",
+    category: "car",
+  },
+    {
+    id: 7,
+    name: "Venue (Black/White)",
+    type: "Petrol",
+    seater: 5,
+    price12h: 1799,
+    price24h: 2399,
+    image: "/SUVCars/venue.webp",
+    category: "car",
+  },
+
+     {
+    id: 8,
+    name: "Fronx (White/Blue)",
+    type: "Petrol",
+    seater: 5,
+    price12h: 1499,
+    price24h: 1799,
+    image: "/SUVCars/fronx.webp",
+    category: "car",
+  },
+    {
+    id: 9,
+    name: "Hyundai i20 (White)",
+    type: "Petrol",
+    seater: 5,
+    price12h: 1499,
+    price24h: 1799,
+    image: "/HatchbackCars/i20.webp",
+    category: "car",
+  },
+
+
+
+  {
+    id: 10,
     name: "Bajaj pulser 150",
     type: "Petrol",
     seater: 2,
@@ -58,7 +115,7 @@ const cars = [
   },
 
   {
-    id: 6,
+    id: 11,
     name: "Jupiter 125",
     type: "Petrol",
     seater: 2,
