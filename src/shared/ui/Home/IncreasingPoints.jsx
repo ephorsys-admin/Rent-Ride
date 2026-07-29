@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 // Stats data
 const statsData = [
   { value: 10, suffix: "+", label: "Premium Brands" },
-  { value: 100, suffix: "+", label: "Vehicle Models" },
+  { value: 500, suffix: "+", label: "Satisfied Customers" },
   { value: 15, suffix: "+", label: "Years Experience" },
   { value: 5, suffix: " Star", label: "Average Rating" },
 ];

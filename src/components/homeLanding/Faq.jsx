@@ -17,25 +17,81 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: "What documents do I need to rent a luxury vehicle?",
+      question: "Why choose Rent Ride Cars for self drive car rental in KIIT, Bhubaneswar?",
       answer:
-        "You'll need a valid driver's license, a major credit card in your name, and proof of insurance. International customers require a passport and international driving permit.",
+        "Rent Ride Cars offers affordable, well maintained self drive cars with flexible rental plans, transparent pricing, and convenient pickup locations near KIIT, Patia, Chandrasekharpur, Infocity, and across Bhubaneswar.",
     },
     {
-      question: "What is your cancellation policy?",
+      question: "How can I book a self drive car in KIIT, Bhubaneswar?",
       answer:
-        "Free cancellation up to 48 hours before your reservation. Cancellations within 48 hours incur a 50% fee. No-shows are charged the full rental amount.",
+        "Booking is simple and hassle free with Rent Ride Cars. Choose your preferred car, select your rental dates and time, upload the required documents, complete the payment, and confirm your reservation online or by contacting our team.",
     },
     {
-      question: "Are there any mileage restrictions?",
+      question: "What documents are required to rent a self drive car?",
       answer:
-        "Our premium packages include unlimited mileage. Standard rentals come with 400 kms per day, with additional miles charged at 50 INR/km.",
+        "You need a valid Driving License, an Aadhaar Card or other government-issued ID, and any additional documents requested during the booking process.",
     },
     {
-      question: "Can I extend my rental period?",
+      question: "What is the minimum age to rent a self drive car?",
       answer:
-        "Yes, subject to availability. Contact us at least 24 hours before your return date.",
+        "Drivers must generally be at least 21 years old and hold a valid driving license. Certain premium vehicles may have higher eligibility requirements.",
     },
+    {
+      question: "Do you offer doorstep pickup and drop services?",
+      answer:
+        "Yes. We provide doorstep pickup and drop services in selected areas of Bhubaneswar, including KIIT, Patia, Infocity, Chandrasekharpur, and nearby locations.",
+    },
+    {
+      question: "Can I rent a car for outstation travel from Bhubaneswar?",
+      answer:
+        "Absolutely. Our self drive cars are available for outstation trips, weekend getaways, business travel, and family vacations, subject to our rental terms.",
+    },
+    {
+      question: "What types of cars are available for rent?",
+      answer:
+        "We offer hatchbacks, sedans, SUVs, premium cars and automatic vehicles to suit every budget and travel requirement.",
+    },
+    {
+      question: "Are there any hidden charges?",
+      answer:
+        "No. Rent Ride Cars follows a transparent pricing policy. All applicable charges are clearly communicated before you confirm your booking.",
+    },
+    {
+      question: "Can I rent a car for a few hours or an entire month?",
+      answer:
+        "Yes. We offer hourly, daily, weekly, and monthly self drive car rental plans to match your travel needs.",
+    },
+    {
+      question: "Is fuel included in the rental price?",
+      answer:
+        "Fuel is generally not included unless specifically mentioned in your booking package. Vehicles are provided with a defined fuel level and should be returned accordingly.",
+    },
+    {
+      question: "Can I modify or cancel my booking?",
+      answer:
+        "Yes. Booking modifications and cancellations are available according to our cancellation policy. Please contact our support team as early as possible.",
+    },
+    {
+      question: "What happens if I return the car late?",
+      answer:
+        "Late returns may incur additional rental charges depending on the delay. Inform our team in advance if you expect to return the vehicle later than scheduled.",
+    },
+    {
+      question: "Are your rental cars insured?",
+      answer:
+        "Yes. All vehicles are covered under the required insurance. Customers are expected to follow the rental agreement and drive responsibly throughout the rental period.",
+    },
+    {
+      question: "Which areas do you serve in Bhubaneswar?",
+      answer:
+        "We provide self drive car rental services across KIIT, Patia, KISS, Infocity, Chandrasekharpur, Nayapalli, Rasulgarh, the Airport area, Railway Station, and other major locations in Bhubaneswar.",
+    },
+    {
+      question: "Why is Rent Ride Cars one of the best self drive car rental services in Bhubaneswar?",
+      answer:
+        "Our commitment to clean and well maintained vehicles, affordable pricing, quick booking, excellent customer support, and convenient pickup locations has made Rent Ride Cars a trusted choice for students, professionals, families, and tourists across Bhubaneswar.",
+    }
+
   ];
 
   const toggleFAQ = (index) => {
