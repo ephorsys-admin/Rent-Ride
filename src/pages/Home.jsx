@@ -41,6 +41,7 @@ const Home = () => {
             <p>Choose from our wide range of vehicles including sedans, SUVs, sports cars, and premium vehicles for self-drive rental in Bhubaneswar.</p>
           </div>
         </section>
+        
 
         <HomeAbout />
         <CarSliding />
