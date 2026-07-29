@@ -50,9 +50,7 @@ const navigate = useNavigate();
               transition: "all 0.9s ease-out 0.2s",
             }}
           >
-            <span className="inline-flex items-center gap-2 px-2 py-1 text-xs  rounded-full border border-red-500/10 bg-black-500/10 backdrop-blur text-white">
-              <span className="text-[#ff0000]">•</span>Rent Ride Car - Best Self Drive Car Rental Service in Bhubaneswar
-            </span>
+
           </div>
 
           {/* ===== Headline ===== */}
@@ -61,13 +59,13 @@ const navigate = useNavigate();
                          text-2xl sm:text-2xl md:text-4xl lg:text-6xl"
           >
             <TypingText
-              text="Luxury Self-Drive Car  "
+              text="Best Self Drive Car Rental "
               show={show}
               color="white"
             />
             <br />
             <TypingText
-              text="Rentals in Bhubaneswar"
+              text="in KIIT, Bhubaneswar"
               show={show}
               delay={600}
               color="#FF0000"
@@ -91,7 +89,7 @@ const navigate = useNavigate();
     break-words
   "
           >
-            {"Rent the Bhubaneswar's most exclusive sports cars and luxury vehicles. Feel the power, embrace the speed, live the dream."
+            {"Rent Ride Cars offers premium and affordable self drive car rental in KIIT, KIIT Road, KIIT Square, Infocity, Patia and Chandrasekharpur with a wide range of cars for rent including hatchbacks, sedans SUVs, and premium vehicles. If you need a self drive car near KIIT for your daily commute, airport transfers, business travel, weekend getaways or outstation trips, we provide clean, well maintained vehicles at affordable prices with easy online booking and flexible rental plans."
               .split("")
               .map((char, i) => (
              <span

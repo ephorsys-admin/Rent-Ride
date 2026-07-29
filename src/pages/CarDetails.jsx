@@ -455,23 +455,23 @@ Please confirm availability and booking details.`;
                   <span className="text-white/70 text-sm">Rental Price</span>
                   
                   {/* Toggle Button */}
-                  <div className="flex border border-red-600 rounded-lg overflow-hidden text-xs font-semibold">
+                  <div className="flex gap-2">
                     <button
                       onClick={() => setPriceMode("12h")}
-                      className={`px-3 py-1 transition-all ${
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
                         (priceMode || car?.selectedMode || "24h") === "12h"
-                          ? "bg-red-600 text-white"
-                          : "bg-transparent text-red-600 hover:bg-red-600/10"
+                          ? "bg-[#ff0000] text-white shadow-md shadow-[#ff0000]/20 scale-105 border border-[#ff0000]"
+                          : "border border-zinc-500 hover:border-zinc-300 bg-zinc-900/60 hover:bg-zinc-800 text-zinc-200 hover:text-white"
                       }`}
                     >
                       12h
                     </button>
                     <button
                       onClick={() => setPriceMode("24h")}
-                      className={`px-3 py-1 border-l border-red-600 transition-all ${
+                      className={`px-3 py-1.5 rounded-full text-xs font-semibold transition-all duration-200 ${
                         (priceMode || car?.selectedMode || "24h") === "24h"
-                          ? "bg-red-600 text-white"
-                          : "bg-transparent text-red-600 hover:bg-red-600/10"
+                          ? "bg-[#ff0000] text-white shadow-md shadow-[#ff0000]/20 scale-105 border border-[#ff0000]"
+                          : "border border-zinc-500 hover:border-zinc-300 bg-zinc-900/60 hover:bg-zinc-800 text-zinc-200 hover:text-white"
                       }`}
                     >
                       24h
@@ -481,7 +481,7 @@ Please confirm availability and booking details.`;
 
                 <h2 className="text-3xl sm:text-4xl font-bold mt-2">
                   ₹{priceToShow}
-                  <span className="text-white/60 text-lg"> / {mode}</span>
+                  <span className="text-white/60 text-lg font-semibold">/{mode}</span>
                 </h2>
 
                 <div className="space-y-3 mt-5 ">

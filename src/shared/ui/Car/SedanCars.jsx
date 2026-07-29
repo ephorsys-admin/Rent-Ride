@@ -1,15 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { ArrowRight, ArrowUpRight, Filter, X } from "lucide-react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const SedanCars = () => {
+  const location = useLocation();
   const [filterType, setFilterType] = useState("all");
+  const [seatingType, setSeatingType] = useState(location.state?.seatingType || "all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceMode, setPriceMode] = useState({});
   const [loadedImages, setLoadedImages] = useState(false);
 
   const navigate = useNavigate();
+
+  useEffect(() => {
+    if (location.state?.seatingType) {
+      setSeatingType(location.state.seatingType);
+    }
+  }, [location.state]);
 
   // car data
 
@@ -102,6 +110,12 @@ const SedanCars = () => {
     );
   }
 
+  if (seatingType !== "all") {
+    filteredCars = filteredCars.filter((car) =>
+      car.seater.includes(seatingType),
+    );
+  }
+
   const HandleClick = (car) => {
     const selectedMode = priceMode[car.id] || "24h";
     const selectedPrice = selectedMode === "12h" ? car.price12h : car.price24h;
@@ -185,6 +199,35 @@ const SedanCars = () => {
                       }}
                       className={`w-full px-4 py-3 rounded-xl text-left font-medium transition-all duration-200 ${
                         filterType === option.value
+                          ? "text-[#ff0000] shadow-lg "
+                          : " text-zinc-300 "
+                      }`}
+                    >
+                      {option.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Seating Type Filter */}
+              <div className="space-y-3 pt-4 border-t border-zinc-800">
+                <h3 className="text-zinc-400 text-sm font-medium uppercase tracking-wider mb-3">
+                  Seating Type
+                </h3>
+                <div className="space-y-2">
+                  {[
+                    { value: "all", label: "All Seats" },
+                    { value: "5", label: "5 Seater" },
+                    { value: "7", label: "7 Seater" },
+                  ].map((option) => (
+                    <button
+                      key={option.value}
+                      onClick={() => {
+                        setSeatingType(option.value);
+                        setSidebarOpen(false);
+                      }}
+                      className={`w-full px-4 py-3 rounded-xl text-left font-medium transition-all duration-200 ${
+                        seatingType === option.value
                           ? "text-[#ff0000] shadow-lg "
                           : " text-zinc-300 "
                       }`}
@@ -321,7 +364,7 @@ const SedanCars = () => {
                           {/* LEFT: 12h / 24h + Price */}
                           <div className="space-y-1">
                             {/* Toggle */}
-                            <div className="flex border border-zinc-300 rounded-lg overflow-hidden text-xs font-semibold w-fit">
+                            <div className="flex gap-2">
                               <button
                                 onClick={() =>
                                   setPriceMode((prev) => ({
@@ -329,10 +372,10 @@ const SedanCars = () => {
                                     [car.id]: "12h",
                                   }))
                                 }
-                                className={`px-3 py-1 ${
+                                className={`px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-semibold transition-all duration-205 ${
                                   (priceMode[car.id] || "24h") === "12h"
-                                    ? "bg-black text-white"
-                                    : "bg-white text-zinc-600 hover:bg-zinc-100"
+                                    ? "bg-[#ff0000] text-white shadow-md shadow-[#ff0000]/20 scale-105 border border-[#ff0000]"
+                                    : "border border-zinc-300 hover:border-black bg-zinc-50 hover:bg-zinc-100 text-zinc-700 hover:text-black"
                                 }`}
                               >
                                 12h
@@ -345,10 +388,10 @@ const SedanCars = () => {
                                     [car.id]: "24h",
                                   }))
                                 }
-                                className={`px-3 py-1 border-l border-zinc-300 ${
+                                className={`px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-semibold transition-all duration-205 ${
                                   (priceMode[car.id] || "24h") === "24h"
-                                    ? "bg-black text-white"
-                                    : "bg-white text-zinc-600 hover:bg-zinc-100"
+                                    ? "bg-[#ff0000] text-white shadow-md shadow-[#ff0000]/20 scale-105 border border-[#ff0000]"
+                                    : "border border-zinc-300 hover:border-black bg-zinc-50 hover:bg-zinc-100 text-zinc-700 hover:text-black"
                                 }`}
                               >
                                 24h
@@ -356,15 +399,15 @@ const SedanCars = () => {
                             </div>
 
                             {/* Price */}
-                            <div className="flex items-baseline gap-1">
-                              <span className="text-black text-2xl font-bold">
+                            <div className="flex items-baseline gap-0.5">
+                              <span className="text-black text-xl sm:text-2xl font-bold">
                                 ₹
                                 {(priceMode[car.id] || "24h") === "12h"
                                   ? car.price12h
                                   : car.price24h}
                               </span>
-                              <span className="text-zinc-500 text-sm">
-                                / day
+                              <span className="text-zinc-500 text-xs sm:text-sm font-semibold">
+                                /{(priceMode[car.id] || "24h") === "12h" ? "12h" : "24h"}
                               </span>
                             </div>
                           </div>
