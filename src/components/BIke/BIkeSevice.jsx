@@ -9,6 +9,7 @@ const BikeImage = ({ src, alt, index }) => {
   return (
     <div className="relative h-48 bg-gradient-to-br from-zinc-100 to-zinc-50 overflow-hidden">
       {/* Skeleton */}
+      {/* test */}
       {!loaded && (
         <div className="absolute inset-0 bg-zinc-300 animate-pulse" />
       )}
