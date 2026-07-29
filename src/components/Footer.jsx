@@ -1,10 +1,126 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from "../assets/logo.png";
 
+const kiitRentalCars = [
+  { label: "Swift Dzire Self Drive Car Rental In KIIT Area", to: "/cars/Swift-Dzire" },
+  { label: "Carens Self Drive Car Rental In KIIT Area", to: "/cars/Carens-Clavis" },
+  { label: "Ciaz Self Drive Car Rental In KIIT Area", to: "/cars/Ciaz-Delta" },
+  { label: "Exter Self Drive Car Rental In KIIT Area", to: "/cars/Hyundai-Exter" },
+  { label: "5 Seater Self Drive Car Rental In KIIT Area", to: "/cars", state: { activeTab: "sedan", seatingType: "5" } },
+  { label: "Tata Nexon Self Drive Car Rental In KIIT Area", to: "/cars/Tata-Nexon" },
+  { label: "Compact SUV Self Drive Car Rental In KIIT Area", to: "/cars", state: { activeTab: "suv" } },
+  { label: "SUV Self Drive Car Rental In KIIT Area", to: "/cars", state: { activeTab: "suv" } },
+  { label: "Hatchback Self Drive Car Rental In KIIT Area", to: "/cars", state: { activeTab: "hatchback" } },
+  { label: "Sedan Self Drive Car Rental In KIIT Area", to: "/cars", state: { activeTab: "sedan" } },
+  { label: "7 Seater Self Drive Car Rental In KIIT Area", to: "/cars", state: { activeTab: "suv", seatingType: "7" } },
+  { label: "XUV500 Self Drive Car Rental In KIIT Area", to: "/cars/Mahindra-XUV-500" },
+  { label: "Thar Self Drive Car Rental In KIIT Area", to: "/cars/Mahindra-Thar" },
+  { label: "Scorpio N Self Drive Car Rental In KIIT Area", to: "/cars/Mahindra-Scorpio-N" },
+  { label: "Vitara Breeza Self Drive Car Rental In KIIT Area", to: "/cars/Maruti-Suzuki-Brezza" },
+  { label: "Fronx Self Drive Car Rental In KIIT Area", to: "/cars/Maruti-Suzuki-Fronx" },
+  { label: "Venue Self Drive Car Rental In KIIT Area", to: "/cars/Hyundai-Venue" },
+  { label: "Swift Self Drive Car Rental In KIIT Area", to: "/cars/Swift-VXi" },
+  { label: "Baleno Self Drive Car Rental In KIIT Area", to: "/cars/Baleno-Zeta" },
+  { label: "i20 Self Drive Car Rental In KIIT Area", to: "/cars/i20-Asta" },
+  { label: "i10 Self Drive Car Rental In KIIT Area", to: "/cars/i10-Nios" },
+  { label: "Tiago Self Drive Car Rental In KIIT Area", to: "/cars/Tiago-XT-Rhythm" }
+];
+
+const exploreMoreText = [
+  "Best Self Drive Car Rental In KIIT",
+  "Best Self Drive Car Rental In KIIT Square",
+  "Best Self Drive Car Rental In KIIT Road",
+  "Best Self Drive Car Rental In KIIT University",
+  "Best Self Drive Car Rental In Patia",
+  "Best Self Drive Car Rental In Chandrasekharpur",
+  "Best Self Drive Car Rental In Bhubaneswar",
+  "Best Self Drive Car Rental In Infocity",
+  "Best Self Drive Car Rental In Infocity Road"
+];
+
 const Footer = () => {
+  const [isOpen1, setIsOpen1] = useState(false);
+  const [isOpen2, setIsOpen2] = useState(false);
+
   return (
     <footer className="relative w-full px-4 sm:px-6 md:px-10 lg:px-16 py-8 sm:py-12 bg-black">
       
+      {/* Accordions Section */}
+      <div className="mx-auto max-w-9xl mb-8 space-y-4">
+        {/* Accordion 1 */}
+        <div className="border border-white/10 rounded-2xl bg-[#0d0d0d] overflow-hidden shadow-xl">
+          <button
+            onClick={() => setIsOpen1(!isOpen1)}
+            className="w-full flex items-center justify-center gap-3 px-6 py-6 text-center text-white/90 transition-colors cursor-pointer select-none group"
+          >
+            <span className="text-sm sm:text-base font-bold tracking-wide transition-colors duration-300 group-hover:text-[#FF0000]">
+              Explore the best self drive rental cars in KIIT
+            </span>
+            <svg
+              className={`w-5 h-5 text-[#FF0000] transition-transform duration-300 ${isOpen1 ? "rotate-180" : ""}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          
+          {isOpen1 && (
+            <div className="px-6 pb-6 pt-2 border-t border-white/5 bg-[#080808]/50">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3.5 text-xs sm:text-sm text-zinc-400 font-medium">
+                {kiitRentalCars.map((car, idx) => (
+                  <Link
+                    key={idx}
+                    to={car.to}
+                    state={car.state}
+                    className="hover:text-[#FF0000] hover:translate-x-1 transition-all duration-200 block truncate"
+                  >
+                    {car.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Accordion 2 */}
+        <div className="border border-white/10 rounded-2xl bg-[#0d0d0d] overflow-hidden shadow-xl">
+          <button
+            onClick={() => setIsOpen2(!isOpen2)}
+            className="w-full flex items-center justify-center gap-3 px-6 py-6 text-center text-white/90 transition-colors cursor-pointer select-none group"
+          >
+            <span className="text-sm sm:text-base font-bold tracking-wide transition-colors duration-300 group-hover:text-[#FF0000]">
+              Explore More with Rent Ride Cars
+            </span>
+            <svg
+              className={`w-5 h-5 text-[#FF0000] transition-transform duration-300 ${isOpen2 ? "rotate-180" : ""}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+
+          {isOpen2 && (
+            <div className="px-6 pb-6 pt-2 border-t border-white/5 bg-[#080808]/50">
+              <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-3.5 text-xs sm:text-sm text-zinc-400 font-medium">
+                {exploreMoreText.map((text, idx) => (
+                  <div
+                    key={idx}
+                    className="block truncate select-none text-zinc-400"
+                  >
+                    {text}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
       {/* Outer glass container */}
       <div className="relative mx-auto max-w-9xl rounded-[20px] sm:rounded-[30px] lg:rounded-[40px] bg-gradient-to-br from-[#141414] via-[#1a1a1a] to-[#0f0f0f] border border-white/10 shadow-2xl overflow-hidden">
 

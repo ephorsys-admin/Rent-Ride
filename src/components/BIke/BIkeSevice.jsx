@@ -9,6 +9,7 @@ const BikeImage = ({ src, alt, index }) => {
   return (
     <div className="relative h-48 bg-gradient-to-br from-zinc-100 to-zinc-50 overflow-hidden">
       {/* Skeleton */}
+      {/* test */}
       {!loaded && (
         <div className="absolute inset-0 bg-zinc-300 animate-pulse" />
       )}
@@ -140,34 +141,50 @@ Please confirm availability and booking details.`;
                 <div className="pt-4 border-t border-zinc-200 flex justify-between items-center">
                   <div>
                     {/* TOGGLE */}
-                    <div className="flex border rounded-lg overflow-hidden text-xs font-semibold">
-                      {["12h", "24h"].map((mode) => (
-                        <button
-                          key={mode}
-                          onClick={() =>
-                            setPriceMode((prev) => ({
-                              ...prev,
-                              [bike.id]: mode,
-                            }))
-                          }
-                          className={`px-3 py-1 ${
-                            (priceMode[bike.id] || "24h") === mode
-                              ? "bg-black text-white"
-                              : "bg-white text-zinc-600"
-                          }`}
-                        >
-                          {mode}
-                        </button>
-                      ))}
+                    <div className="flex gap-2">
+                      <button
+                        onClick={() =>
+                          setPriceMode((prev) => ({
+                            ...prev,
+                            [bike.id]: "12h",
+                          }))
+                        }
+                        className={`px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-semibold transition-all duration-205 ${
+                          (priceMode[bike.id] || "24h") === "12h"
+                            ? "bg-[#ff0000] text-white shadow-md shadow-[#ff0000]/20 scale-105 border border-[#ff0000]"
+                            : "border border-zinc-300 hover:border-black bg-zinc-50 hover:bg-zinc-100 text-zinc-700 hover:text-black"
+                        }`}
+                      >
+                        12h
+                      </button>
+                      <button
+                        onClick={() =>
+                          setPriceMode((prev) => ({
+                            ...prev,
+                            [bike.id]: "24h",
+                          }))
+                        }
+                        className={`px-2.5 py-1 rounded-full text-[10px] sm:text-xs font-semibold transition-all duration-205 ${
+                          (priceMode[bike.id] || "24h") === "24h"
+                            ? "bg-[#ff0000] text-white shadow-md shadow-[#ff0000]/20 scale-105 border border-[#ff0000]"
+                            : "border border-zinc-300 hover:border-black bg-zinc-50 hover:bg-zinc-100 text-zinc-700 hover:text-black"
+                        }`}
+                      >
+                        24h
+                      </button>
                     </div>
 
                     {/* PRICE VALUE */}
-                    <div className="text-2xl font-bold mt-1 text-black">
-                      ₹
-                      {(priceMode[bike.id] || "24h") === "12h"
-                        ? bike.price12h
-                        : bike.price24h}
-                      <span className="text-sm text-zinc-500"> /day</span>
+                    <div className="text-xl sm:text-2xl font-bold mt-1 text-black flex items-baseline gap-0.5">
+                      <span>
+                        ₹
+                        {(priceMode[bike.id] || "24h") === "12h"
+                          ? bike.price12h
+                          : bike.price24h}
+                      </span>
+                      <span className="text-zinc-500 text-xs sm:text-sm font-semibold">
+                        /{(priceMode[bike.id] || "24h") === "12h" ? "12h" : "24h"}
+                      </span>
                     </div>
                   </div>
 

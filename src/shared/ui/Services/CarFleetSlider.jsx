@@ -216,7 +216,7 @@ export default function CarFleetSlider() {
           </motion.div>
           <h2 className="text-xl sm:text-2xl lg:text-4xl xl:text-5xl font-bold leading-tight">
             <MemoTypingText
-              text="Explore Our Perfect Fleet"
+              text="Our Top Rented Cars"
               show={isVisible}
               speed={30}
               color="#ffffff"
