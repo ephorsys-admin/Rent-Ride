@@ -9,7 +9,7 @@ const SedanCars = () => {
   const [seatingType, setSeatingType] = useState(location.state?.seatingType || "all");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceMode, setPriceMode] = useState({});
-  const [loadedImages, setLoadedImages] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
 
   const navigate = useNavigate();
 
