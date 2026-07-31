@@ -90,7 +90,7 @@ export default function Feedback() {
     <section className="min-h-screen w-full bg-black px-4 sm:px-6 lg:px-12  flex flex-col items-center">
       
       {/* Heading */}
-      <div className="w-full max-w-4xl text-center mb-1 sm:mb-1">
+      <div className="w-full max-w-4xl text-center mb-6 sm:mb-16">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}

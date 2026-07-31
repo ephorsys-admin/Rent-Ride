@@ -10,7 +10,7 @@ const HatchbackCars = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [priceMode, setPriceMode] = useState({});
   const [globalPriceMode, setGlobalPriceMode] = useState("24h");
-  const [loadedImages, setLoadedImages] = useState(false);
+  const [loadedImages, setLoadedImages] = useState({});
 
   const navigate = useNavigate();
 
