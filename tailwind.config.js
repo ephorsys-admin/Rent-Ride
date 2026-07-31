@@ -7,9 +7,9 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-      sans: ['Inter', 'system-ui', 'sans-serif'],
-      heading: ['Poppins', 'sans-serif'],
-    },
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        heading: ['Poppins', 'sans-serif'],
+      },
     },
   },
   plugins: [],
