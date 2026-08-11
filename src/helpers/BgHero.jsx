@@ -45,7 +45,7 @@ function Bghero({
       setImgLoaded(true);
     }
   }}
-  onError={() => setImgLoaded(true)} // prevents infinite skeleton
+  onError={() => setImgLoaded(true)} // prevents infinite skeleton//test
   className="absolute inset-0 w-full h-full object-cover object-center"
   sizes="(max-width: 640px) 100vw,
          (max-width: 1024px) 100vw,
