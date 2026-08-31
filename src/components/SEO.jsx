@@ -19,7 +19,11 @@ const SEO = ({
   children,
   schemaType = "homepage",
 }) => {
-  const seoTitle = title ? `${title} | Rent Ride Car` : defaultTitle;
+  const seoTitle = title
+    ? title.includes("Rent Ride Car")
+      ? title
+      : `${title} | Rent Ride Car`
+    : defaultTitle;
   const seoDescription = description || defaultDescription;
   const seoUrl = url || defaultUrl;
   const seoImage = image || defaultImage;
