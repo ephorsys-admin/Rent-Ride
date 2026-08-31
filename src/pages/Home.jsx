@@ -17,7 +17,7 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Luxury Self-Drive Car Rentals in Bhubaneswar"
+        title="Best Self Drive Car Rental in KIIT"
         description="Book self-drive car rentals in Bhubaneswar with Rent Ride Car. Choose from hatchbacks, sedans, SUVs and bikes with flexible 12h/24h pricing and fast online booking."
         url="https://rentridecar.com/"
         canonical="https://rentridecar.com/"
@@ -41,11 +41,11 @@ const Home = () => {
             <p>Choose from our wide range of vehicles including sedans, SUVs, sports cars, and premium vehicles for self-drive rental in Bhubaneswar.</p>
           </div>
         </section>
-        
+
 
         <HomeAbout />
         <CarSliding />
-        
+
         {/* Featured Vehicles Section */}
         <section aria-labelledby="vehicles-heading">
           <div className="sr-only">
@@ -53,7 +53,7 @@ const Home = () => {
             <p>Browse our latest and most popular self-drive rental vehicles available in Bhubaneswar.</p>
           </div>
         </section>
-        
+
         <Features />
         <TrustedBrands />
         <BhubaneswarCarRental />
@@ -66,7 +66,7 @@ const Home = () => {
             <p>Simple and transparent car rental process in Bhubaneswar. Book online, pick up your car, and enjoy the freedom of self-drive.</p>
           </div>
         </section>
-        
+
         <HowItWorks />
         <Feedback />
         <FAQ />
