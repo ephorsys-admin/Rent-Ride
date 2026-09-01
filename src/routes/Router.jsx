@@ -15,7 +15,7 @@ const Router = createBrowserRouter([
         path: '/',
         element: <Layout />,
         children: [
-            { path: '/', element: <Home /> },
+            { path: '/self-drive-car-rental-kiit', element: <Home /> },
             { path: '/contact', element: <Contact /> },
             { path: '/about', element: <About /> },
             { path: '/cars', element: <Cars /> },
