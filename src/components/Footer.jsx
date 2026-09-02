@@ -136,7 +136,7 @@ const Footer = () => {
 
           {/* Brand & Contact Details */}
           <div className="sm:col-span-2 lg:col-span-1">
-        <Link to="/self-drive-car-rental-in-bhubaneswar" className="flex items-center gap-2 sm:gap-3">
+        <Link to="/self-drive-car-rental-in-kiit" className="flex items-center gap-2 sm:gap-3">
     <img
       src={logo}
       alt="logo"
@@ -227,7 +227,7 @@ const Footer = () => {
             <h3 className="text-white font-semibold mb-4 sm:mb-5 text-sm sm:text-base">Quick Links</h3>
             <ul className="space-y-2 sm:space-y-3 text-sm text-white/70">
               <li>
-                <Link to="/self-drive-car-rental-in-bhubaneswar" className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
+                <Link to="/self-drive-car-rental-in-kiit" className="inline-block hover:text-[#FF0000] hover:translate-x-1 transition-all duration-300">
                   Home
                 </Link>
               </li>

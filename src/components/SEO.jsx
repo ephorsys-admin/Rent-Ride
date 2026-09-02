@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-const defaultTitle = "Rent Ride Car | Self Drive Car Rentals in Bhubaneswar";
+const defaultTitle = "Best Self Drive Car Rental in KIIT, Bhubaneswar";
 const defaultDescription =
   "Rent Ride Car offers the best self-drive car rental service in Bhubaneswar. Choose from hatchbacks, sedans, SUVs and bikes with affordable pricing, easy online booking, and premium customer support.";
 const defaultKeywords =
@@ -19,11 +19,7 @@ const SEO = ({
   children,
   schemaType = "homepage",
 }) => {
-  const seoTitle = title
-    ? title.includes("Rent Ride Car")
-      ? title
-      : `${title} | Rent Ride Car`
-    : defaultTitle;
+  const seoTitle = title || defaultTitle;
   const seoDescription = description || defaultDescription;
   const seoUrl = url || defaultUrl;
   const seoImage = image || defaultImage;

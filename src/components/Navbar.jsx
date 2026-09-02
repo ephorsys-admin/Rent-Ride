@@ -7,7 +7,7 @@ import logo from "../assets/logo.png";
 /* -------------------- DATA -------------------- */
 
 const DEFAULT_NAV_ITEMS = [
-  { name: "Home", href: "/self-drive-car-rental-in-bhubaneswar" },
+  { name: "Home", href: "/self-drive-car-rental-in-kiit" },
   { name: "Cars", href: "/cars" },
   { name: "Bikes", href: "/bike" },
   { name: "Services", href: "/services" },
@@ -182,7 +182,7 @@ export default function Navbar() {
         ${isScrolled ? "bg-black/60 backdrop-blur-md" : "bg-black/80"}`}
       >
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 h-16 sm:h-20 flex justify-between items-center">
-  <Link to="/self-drive-car-rental-in-bhubaneswar" className="flex items-center gap-2 sm:gap-3">
+  <Link to="/self-drive-car-rental-in-kiit" className="flex items-center gap-2 sm:gap-3">
     <img
       src={logo}
       alt="logo"
@@ -228,7 +228,7 @@ export default function Navbar() {
         ${isOpen ? "translate-x-0" : "-translate-x-full"}`}
       >
         <div className="p-6 border-b border-white/10 flex justify-between items-center">
-          <Link to="/self-drive-car-rental-in-bhubaneswar" className="flex items-center gap-3">
+          <Link to="/self-drive-car-rental-in-kiit" className="flex items-center gap-3">
             <img src={logo} alt="logo" className="h-12 w-12" />
        
           </Link>

@@ -18,11 +18,11 @@ const Router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Navigate to="/self-drive-car-rental-in-bhubaneswar" replace />,
+                element: <Navigate to="/self-drive-car-rental-in-kiit" replace />,
             },
 
             {
-                path: 'self-drive-car-rental-in-bhubaneswar',
+                path: 'self-drive-car-rental-in-kiit',
                 element: <Home />,
             },
 

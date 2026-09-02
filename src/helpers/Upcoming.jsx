@@ -27,7 +27,7 @@ export default function Upcoming() {
             This page is under construction. We’re launching it very soon.
           </p>
 
-          <Link to="/self-drive-car-rental-in-bhubaneswar">
+          <Link to="/self-drive-car-rental-in-kiit">
             <button
               size="lg"
               rounded="pill"

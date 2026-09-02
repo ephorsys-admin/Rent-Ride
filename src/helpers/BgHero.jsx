@@ -86,7 +86,7 @@ function Bghero({
                        text-xs sm:text-sm md:text-base animate-hero-delay"
           >
             <a
-              href="/self-drive-car-rental-in-bhubaneswar"
+              href="/self-drive-car-rental-in-kiit"
               className="text-white hover:text-[#ff0000] transition-colors duration-300"
             >
               {Home}
